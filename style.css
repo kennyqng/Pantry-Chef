@@ -1,0 +1,67 @@
+body {
+    background-image: url("/images/cuttingBoard.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 110%;
+}
+
+.navbar {
+    background-color: yellowgreen;
+}
+
+.d-inline-block {
+    height: 40px;
+    width: 50px;
+}
+
+h5 {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Germania One', cursive;
+    margin-top: 20px;
+}
+
+form {
+    margin-left: 45%;
+}
+
+#arrow {
+    font-size:50px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.container {
+    margin: auto;
+    width: 60%;
+    border: 0px solid black;
+    padding: 10px;
+}
+
+#logo {
+    width: 12rem;
+    margin-left: 45%;
+    margin-top: 50px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+}
+
+#logo p {
+    text-align: center;
+}
+
+footer {
+    background-color: yellowgreen;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
