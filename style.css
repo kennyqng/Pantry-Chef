@@ -1,0 +1,107 @@
+body {
+    background-image: url("./images/cuttingBoard.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+}
+
+.navbar {
+    background-color: yellowgreen;
+}
+
+.d-inline-block {
+    height: 40px;
+    width: 50px;
+}
+
+h5 {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Germania One', cursive;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+form .form-row{
+    margin: 0 34%;
+}
+
+#arrow {
+    font-size: 60px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.container {
+    margin: auto;
+    width: 60%;
+    border: 0px solid black;
+    padding: 10px;
+}
+
+#logo {
+    margin-top: 80px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+}
+
+img.card-img-top {
+    width: 80px;
+    margin: 0 auto;
+}
+
+#logo p {
+    text-align: center;
+}
+
+footer {
+    background-color: yellowgreen;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #fff;
+}
+
+/******* iPad styling  *******/
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    form .form-row {
+        margin: 0 31%;
+    }
+    div#logo {
+        margin-top: 43%;
+    }
+}
+
+/******* Mobile styling  *******/
+@media only screen and (max-width:767px) {
+    form .form-row {
+        margin: 0 10%;
+    }
+    div#logo {
+        margin-top: 15%;
+    }
+}
