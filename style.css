@@ -1,8 +1,9 @@
 body {
-    background-image: url("/images/cuttingBoard.jpg");
+    background-image: url("./images/cuttingBoard.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 110%;
+    background-size: cover;
+    background-position: center top;
 }
 
 .navbar {
@@ -26,11 +27,16 @@ h1 {
 }
 
 form {
-    margin-left: 45%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+form .form-row{
+    margin: 0 34%;
 }
 
 #arrow {
-    font-size:50px;
+    font-size: 60px;
     color: white;
     background-color: transparent;
     border: none;
@@ -44,13 +50,16 @@ form {
 }
 
 #logo {
-    width: 12rem;
-    margin-left: 45%;
-    margin-top: 50px;
+    margin-top: 80px;
     background-color: transparent;
     font-size: 1.2rem;
     color: white;
     border: none;
+}
+
+img.card-img-top {
+    width: 80px;
+    margin: 0 auto;
 }
 
 #logo p {
@@ -64,4 +73,35 @@ footer {
     text-align: center;
     margin-top: 30px;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #fff;
+}
+
+/******* iPad styling  *******/
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    form .form-row {
+        margin: 0 31%;
+    }
+    div#logo {
+        margin-top: 43%;
+    }
+}
+
+/******* Mobile styling  *******/
+@media only screen and (max-width:767px) {
+    form .form-row {
+        margin: 0 10%;
+    }
+    div#logo {
+        margin-top: 15%;
+    }
 }
