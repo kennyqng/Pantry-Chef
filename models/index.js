@@ -6,20 +6,13 @@ const Sequelize = require("sequelize");
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + "/../config/config.json")[env];
-const db = {};
-
-if (config.use_env_variable) {
-  // eslint-disable-next-line no-unused-vars
-  const sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  // eslint-disable-next-line no-unused-vars
-  var sequelize = new Sequelize(
+const sequelize = config.use_env_variable ? new Sequelize(process.env[config.use_env_variable]) : new Sequelize(
     config.database,
     config.username,
     config.password,
     config
   );
-}
+let db = {};
 
 fs.readdirSync(__dirname)
   .filter(file => {
