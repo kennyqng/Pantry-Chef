@@ -13,7 +13,7 @@ if (config.use_env_variable) {
   const sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   // eslint-disable-next-line no-unused-vars
-  const sequelize = new Sequelize(
+  var sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
