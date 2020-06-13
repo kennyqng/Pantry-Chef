@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Login | Signup</a>
+                <a class="nav-link" href="#">Login | Signup</a>
             </li>
         </ul>
     </div>
@@ -45,9 +45,13 @@
             </ul>
         </div>
         <div>
-            <p>Dish: {{dishName}}</p>
-            <p>Dish: {{ingredients}}</p>
-            <p>Instructions: {{instructions}}</p>
+            <ul>
+                {{#each result}}
+                <li>
+                    <p>{{this.id}} {{this.result}}</p>
+                </li>
+                {{/each results}}
+            </ul>
         </div>
     </div>
 </div>
