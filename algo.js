@@ -11,13 +11,13 @@ const db = [
   "3/4 teaspoons dry mustard",
   "Dash hot sauce",
   "1/4 cup heavy cream",
-  "1/2 cup melted butter",
+  "1/2 cup melted butter"
 ];
 
 function algo(arr, db) {
   //returns filtered db, based on arr
-  let string = db.join(" ");
-  console.log(arr.filter((a) => new RegExp(a, "gi").test(string)));
+  const string = db.join(" ");
+  console.log(arr.filter(a => new RegExp(a, "gi").test(string)));
 }
 
 algo(["crabmeat", "mustard", "cream", "cracker", "horsemeat"], db);
