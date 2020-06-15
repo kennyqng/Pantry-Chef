@@ -1,70 +1,1050 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <title>Pantry Chef</title>
-</head>
-<body>
+    <script>
+      $(document).ready(function() {
+        $(".nav-tabs a").click(function() {
+          $(this).tab("show");
+        });
+      });
+
+      function myFunction(element) {
+        $(element).next().toggleClass("show");
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.add("show");
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="./images/knifeForkLogo.png" class="d-inline-block align-top" alt="">
-        </a>
-        <h5>Pantry Chef</h5>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login | Signup</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">
+        <img
+          src="./images/knifeForkLogo.png"
+          class="d-inline-block align-top"
+          alt=""
+        />
+      </a>
+      <h5>Pantry Chef</h5>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login | Signup</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <br />
-    
-    <h1>What Can You Cook Today? </h1>
+
+    <h1>What Can You Cook Today?</h1>
     <br />
-    
+
     <form>
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <input type="text" style = "margin-top:20px;" class="form-control mb-2" id="inlineFormInput" placeholder="Search for a dish">
-            </div>   
-            <div class="col-auto">
-                <button id = "arrow">&#8594;</button>
-            </div>
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <input
+            type="text"
+            style="margin-top:20px;"
+            class="form-control mb-2"
+            id="inlineFormInput"
+            placeholder="Search for a dish"
+          />
         </div>
+        <div class="col-auto">
+          <button id="arrow">&#8594;</button>
+        </div>
+      </div>
     </form>
     <br />
-    
+
     <div class="container">
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-tabs nav-justified card-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Ingredients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cuisines</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs nav-justified card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#ingredients"
+                >Ingredients</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#results">Results</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#cuisines"
+                >Cuisines</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <div class="tab-content">
+        <div id="ingredients" class="tab-pane fade show active">
+          <h3>Categories</h3>
+          <div class="container-categories">
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/dairy.png" alt="" />
+                  <label for="dairy">Dairy</label>
+                </div>
+                <button class="dropbtn dropdown" onclick="myFunction(this)">+</button>
+                <div class="dropdown-content">
+                  <label for="dairy1"><input type="checkbox" class = "ingredients-list" /><span>Butter</span></label>
+                  <label for="dairy2"><input type="checkbox" class = "ingredients-list" /><span>Egg</span></label>
+                  <label for="dairy3"><input type="checkbox" class = "ingredients-list" /><span>Milk</span></label>
+                  <label for="dairy4"><input type="checkbox" class = "ingredients-list" /><span>Parmesan</span></label>
+                  <label for="dairy5"><input type="checkbox" class = "ingredients-list" /><span>Cheddar</span></label>
+                  <label for="dairy6"><input type="checkbox" class = "ingredients-list" /><span>American Cheese</span></label>
+                  <label for="dairy7"><input type="checkbox" class = "ingredients-list" /><span>Sour Cream</span></label>
+                  <label for="dairy8"><input type="checkbox" class = "ingredients-list" /><span>Evaporated Milk</span></label>
+                  <label for="dairy9"><input type="checkbox" class = "ingredients-list" /><span>Whipped Cream</span></label>
+                  <label for="dairy10"><input type="checkbox" class = "ingredients-list" /><span>Half and Half</span></label>
+                  <label for="dairy11"><input type="checkbox" class = "ingredients-list" /><span>Yoghurt</span></label>
+                  <label for="dairy12"><input type="checkbox" class = "ingredients-list" /><span>Cream Cheese</span></label>
+                  <label for="dairy13"><input type="checkbox" class = "ingredients-list" /><span>Mozzarella</span></label>
+                  <label for="dairy14"><input type="checkbox" class = "ingredients-list" /><span>Cream</span></label>
+                  <label for="dairy15"><input type="checkbox" class = "ingredients-list" /><span>Feta</span></label>
+                  <label for="dairy16"><input type="checkbox" class = "ingredients-list" /><span>Monterey Jack Cheese</span></label>
+                  <label for="dairy17"><input type="checkbox" class = "ingredients-list" /><span>Condensed Milk</span></label>
+                  <label for="dairy18"><input type="checkbox" class = "ingredients-list" /><span>Cottage Cheese</span></label>
+                  <label for="dairy19"><input type="checkbox" class = "ingredients-list" /><span>Ice Cream</span></label>
+                  <label for="dairy20"><input type="checkbox" class = "ingredients-list" /><span>Swiss Cheese</span></label>
+                  <label for="dairy10"><input type="checkbox" class = "ingredients-list" /><span>Frosting</span></label>
+                  <label for="dairy21"><input type="checkbox" class = "ingredients-list" /><span>Buttermilk</span></label>
+                  <label for="dairy22"><input type="checkbox" class = "ingredients-list" /><span>Velveeta</span></label>
+                  <label for="dairy10"><input type="checkbox" class = "ingredients-list" /><span>Ricotta</span></label>
+                  <label for="dairy23"><input type="checkbox" class = "ingredients-list" /><span>Goat Cheese</span></label>
+                  <label for="dairy24"><input type="checkbox" class = "ingredients-list" /><span>Blue Cheese</span></label>
+                  <label for="dairy25"><input type="checkbox" class = "ingredients-list" /><span>Powdered Milk</span></label>
+                  <label for="dairy26"><input type="checkbox" class = "ingredients-list" /><span>Colby Cheese</span></label>
+                  <label for="dairy27"><input type="checkbox" class = "ingredients-list" /><span>Pepper Jack</span></label>
+                  <label for="dairy28"><input type="checkbox" class = "ingredients-list" /><span>Italian Cheese</span></label>
+                  <label for="dairy29"><input type="checkbox" class = "ingredients-list" /><span>SOft Cheese</span></label>
+                  <label for="dairy30"><input type="checkbox" class = "ingredients-list" /><span>Gouda</span></label>
+                  <label for="dairy31"><input type="checkbox" class = "ingredients-list" /><span>Pepperjack Cheese</span></label>
+                  <label for="dairy32"><input type="checkbox" class = "ingredients-list" /><span>Romano</span></label>
+                  <label for="dairy33"><input type="checkbox" class = "ingredients-list" /><span>Pizza Cheese</span></label>
+                  <label for="dairy34"><input type="checkbox" class = "ingredients-list" /><span>Ghee</span></label>
+                  <label for="dairy35"><input type="checkbox" class = "ingredients-list" /><span>Pecorino Cheese</span></label>
+                  <label for="dairy36"><input type="checkbox" class = "ingredients-list" /><span>Queso Fresco Cheese</span></label>
+                  <label for="dairy37"><input type="checkbox" class = "ingredients-list" /><span>Custard</span></label>
+                  <label for="dairy38"><input type="checkbox" class = "ingredients-list" /><span>Hard Cheese</span></label>
+                  <label for="dairy39"><input type="checkbox" class = "ingredients-list" /><span>Paneer</span></label>
+                  <label for="dairy40"><input type="checkbox" class = "ingredients-list" /><span>Brick Cheese</span></label>
+                  <label for="dairy41"><input type="checkbox" class = "ingredients-list" /><span>Goat Milk</span></label>
+                  <label for="dairy42"><input type="checkbox" class = "ingredients-list" /><span>Garlic Herb Cheese</span></label>
+                  <label for="dairy43"><input type="checkbox" class = "ingredients-list" /><span>Fontina</span></label>
+                  <label for="dairy44"><input type="checkbox" class = "ingredients-list" /><span>Bocconcini Cheese</span></label>
+                  <label for="dairy45"><input type="checkbox" class = "ingredients-list" /><span>Farmer Cheese</span></label>
+                  <label for="dairy46"><input type="checkbox" class = "ingredients-list" /><span>Creme De Cassis</span></label>
+                  <label for="dairy47"><input type="checkbox" class = "ingredients-list" /><span>Double gloucester Cheese</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/vegetables.png" alt="" />
+                  <label for="vegetable1">Vegetables</label>
+                </div>
+                <button onclick="myFunction(this)" class = "dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="vegetable1"><input type="checkbox" class = "ingredients-list" /><span>Onion</span></label>
+                  <label for="vegetable2"><input type="checkbox" class = "ingredients-list" /> <span>Garlic</span></label>
+                  <label for="vegetable3"><input type="checkbox" class = "ingredients-list" /> <span>Tomato</span></label>
+                  <label for="vegetable4"><input type="checkbox" class = "ingredients-list" /> <span>Potato</span></label>
+                  <label for="vegetable5"><input type="checkbox" class = "ingredients-list" /> <span>Carrot</span></label>
+                  <label for="vegetable6"><input type="checkbox" class = "ingredients-list" /> <span>Bell Pepper</span></label>
+                  <label for="vegetable7"><input type="checkbox" class = "ingredients-list" /> <span>Basil</span></label>
+                  <label for="vegetable8"><input type="checkbox" class = "ingredients-list" /> <span>Parsley</span></label>
+                  <label for="vegetable9"><input type="checkbox" class = "ingredients-list" /> <span>Broccoli</span></label>
+                  <label for="vegetable10"><input type="checkbox" class = "ingredients-list" /> <span>Corn</span></label>
+                  <label for="vegetable11"><input type="checkbox" class = "ingredients-list" /> <span>Spinach</span></label>
+                  <label for="vegetable12"><input type="checkbox" class = "ingredients-list" /> <span>Mushroom</span></label>
+                  <label for="vegetable13"><input type="checkbox" class = "ingredients-list" /> <span>Green Beans</span></label>
+                  <label for="vegetable14"><input type="checkbox" class = "ingredients-list" /> <span>Ginger</span></label>
+                  <label for="vegetable15"><input type="checkbox" class = "ingredients-list" /> <span>Chilli Pepper</span></label>
+                  <label for="vegetable16"><input type="checkbox" class = "ingredients-list" /> <span>Celery</span></label>
+                  <label for="vegetable17"><input type="checkbox" class = "ingredients-list" /> <span>Rosemary</span></label>
+                  <label for="vegetable18"><input type="checkbox" class = "ingredients-list" /> <span>Salad Greens</span></label>
+                  <label for="vegetable19"><input type="checkbox" class = "ingredients-list" /> <span>Red Onion</span></label>
+                  <label for="vegetable20"><input type="checkbox" class = "ingredients-list" /> <span>Cucumber</span></label>
+                  <label for="vegetable21"><input type="checkbox" class = "ingredients-list" /> <span>Sweet Potato</span></label>
+                  <label for="vegetable22"><input type="checkbox" class = "ingredients-list" /> <span>Pickle</span></label>
+                  <label for="vegetable23"><input type="checkbox" class = "ingredients-list" /> <span>Avocado</span></label>
+                  <label for="vegetable24"><input type="checkbox" class = "ingredients-list" /> <span>Zucchini</span></label>
+                  <label for="vegetable25"><input type="checkbox" class = "ingredients-list" /> <span>Cilantro</span></label>
+                  <label for="vegetable26"><input type="checkbox" class = "ingredients-list" /> <span>Frozen Vegetables</span></label>
+                  <label for="vegetable27"><input type="checkbox" class = "ingredients-list" /> <span>Olive</span></label>
+                  <label for="vegetable28"><input type="checkbox" class = "ingredients-list" /> <span>Asparagus</span></label>
+                  <label for="vegetable29"><input type="checkbox" class = "ingredients-list" /> <span>Cabbage</span></label>
+                  <label for="vegetable30"><input type="checkbox" class = "ingredients-list" /> <span>Cauliflower</span></label>
+                  <label for="vegetable31"><input type="checkbox" class = "ingredients-list" /> <span>Dill</span></label>
+                  <label for="vegetable32"><input type="checkbox" class = "ingredients-list" /> <span>Kale</span></label>
+                  <label for="vegetable33"><input type="checkbox" class = "ingredients-list" /> <span>Mixed Vegetables</span></label>
+                  <label for="vegetable34"><input type="checkbox" class = "ingredients-list" /> <span>Pumpkin</span></label>
+                  <label for="vegetable35"><input type="checkbox" class = "ingredients-list" /> <span>Squash</span></label>
+                  <label for="vegetable36"><input type="checkbox" class = "ingredients-list" /> <span>Mint</span></label>
+                  <label for="vegetable37"><input type="checkbox" class = "ingredients-list" /> <span>Scallion</span></label>
+                  <label for="vegetable38"><input type="checkbox" class = "ingredients-list" /> <span>Sun Dried Tomato</span></label>
+                  <label for="vegetable39"><input type="checkbox" class = "ingredients-list" /> <span>Shallot</span></label>
+                  <label for="vegetable40"><input type="checkbox" class = "ingredients-list" /> <span>Eggplant</span></label>
+                  <label for="vegetable41"><input type="checkbox" class = "ingredients-list" /> <span>Beet</span></label>
+                  <label for="vegetable42"><input type="checkbox" class = "ingredients-list" /> <span>Butternut Squash</span></label>
+                  <label for="vegetable43"><input type="checkbox" class = "ingredients-list" /> <span>Horseradish</span></label>
+                  <label for="vegetable44"><input type="checkbox" class = "ingredients-list" /> <span>Leek</span></label>
+                  <label for="vegetable45"><input type="checkbox" class = "ingredients-list" /> <span>Caper</span></label>
+                  <label for="vegetable46"><input type="checkbox" class = "ingredients-list" /> <span>Brussels Sprout</span></label>
+                  <label for="vegetable47"><input type="checkbox" class = "ingredients-list" /> <span>Artichoke Heart</span></label>
+                  <label for="vegetable48"><input type="checkbox" class = "ingredients-list" /> <span>Chia Seeds</span></label>
+                  <label for="vegetable49"><input type="checkbox" class = "ingredients-list" /> <span>Radish</span></label>
+                  <label for="vegetable50"><input type="checkbox" class = "ingredients-list" /> <span>Artichoke</span></label>
+                  <label for="vegetable51"><input type="checkbox" class = "ingredients-list" /> <span>Portobello Mushroom</span></label>
+                  <label for="vegetable52"><input type="checkbox" class = "ingredients-list" /> <span>Sweet Pepper</span></label>
+                  <label for="vegetable53"><input type="checkbox" class = "ingredients-list" /> <span>Arugula</span></label>
+                  <label for="vegetable54"><input type="checkbox" class = "ingredients-list" /> <span>Spaghetti Squash</span></label>
+                  <label for="vegetable55"><input type="checkbox" class = "ingredients-list" /> <span>Capsicum</span></label>
+                  <label for="vegetable56"><input type="checkbox" class = "ingredients-list" /> <span>Bok Choy</span></label>
+                  <label for="vegetable57"><input type="checkbox" class = "ingredients-list" /> <span>Parsnip</span></label>
+                  <label for="vegetable58"><input type="checkbox" class = "ingredients-list" /> <span>Okra</span></label>
+                  <label for="vegetable59"><input type="checkbox" class = "ingredients-list" /> <span>Sauerkraut</span></label>
+                  <label for="vegetable60"><input type="checkbox" class = "ingredients-list" /> <span>Yam</span></label>
+                  <label for="vegetable61"><input type="checkbox" class = "ingredients-list" /> <span>Fennel</span></label>
+                  <label for="vegetable62"><input type="checkbox" class = "ingredients-list" /> <span>Turnip</span></label>
+                  <label for="vegetable63"><input type="checkbox" class = "ingredients-list" /> <span>Snow Peas</span></label>
+                  <label for="vegetable64"><input type="checkbox" class = "ingredients-list" /> <span>Bean Sprouts</span></label>
+                  <label for="vegetable65"><input type="checkbox" class = "ingredients-list" /> <span>Seaweed</span></label>
+                  <label for="vegetable66"><input type="checkbox" class = "ingredients-list" /> <span>Chard</span></label>
+                  <label for="vegetable67"><input type="checkbox" class = "ingredients-list" /> <span>Collard</span></label>
+                  <label for="vegetable68"><input type="checkbox" class = "ingredients-list" /> <span>Canned Tomato</span></label>
+                  <label for="vegetable69"><input type="checkbox" class = "ingredients-list" /> <span>Mustard Greens</span></label>
+                  <label for="vegetable70"><input type="checkbox" class = "ingredients-list" /> <span>Bamboo Shoot</span></label>
+                  <label for="vegetable71"><input type="checkbox" class = "ingredients-list" /> <span>Broccoli Rabe</span></label>
+                  <label for="vegetable72"><input type="checkbox" class = "ingredients-list" /> <span>Butternut</span></label>
+                  <label for="vegetable73"><input type="checkbox" class = "ingredients-list" /> <span>Celery Root</span></label>
+                  <label for="vegetable74"><input type="checkbox" class = "ingredients-list" /> <span>Water Chestnut</span></label>
+                  <label for="vegetable75"><input type="checkbox" class = "ingredients-list" /> <span>Porcini</span></label>
+                  <label for="vegetable76"><input type="checkbox" class = "ingredients-list" /> <span>Micro Greens</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/fruits.jpg" alt="" />
+                  <label for="fruits">Fruits</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="fruit1"><input type="checkbox" class = "ingredients-list" /><span>Lemon</span></label>
+                  <label for="fruit2"><input type="checkbox" class = "ingredients-list" /><span>Apple</span></label>
+                  <label for="fruit3"><input type="checkbox" class = "ingredients-list" /><span>Banana</span></label>
+                  <label for="fruit4"><input type="checkbox" class = "ingredients-list" /><span>Lime</span></label>
+                  <label for="fruit5"><input type="checkbox" class = "ingredients-list" /><span>Strawberry</span></label>
+                  <label for="fruit6"><input type="checkbox" class = "ingredients-list" /><span>Orange</span></label>
+                  <label for="fruit7"><input type="checkbox" class = "ingredients-list" /><span>Pineapple</span></label>
+                  <label for="fruit8"><input type="checkbox" class = "ingredients-list" /><span>Blueberry</span></label>
+                  <label for="fruit9"><input type="checkbox" class = "ingredients-list" /><span>Raisin</span></label>
+                  <label for="fruit10"><input type="checkbox" class = "ingredients-list" /><span>Coconut</span></label>
+                  <label for="fruit11"><input type="checkbox" class = "ingredients-list" /><span>Grape</span></label>
+                  <label for="fruit12"><input type="checkbox" class = "ingredients-list" /><span>Peach</span></label>
+                  <label for="fruit13"><input type="checkbox" class = "ingredients-list" /><span>Raspberry</span></label>
+                  <label for="fruit14"><input type="checkbox" class = "ingredients-list" /><span>Cranberry</span></label>
+                  <label for="fruit15"><input type="checkbox" class = "ingredients-list" /><span>Mango</span></label>
+                  <label for="fruit16"><input type="checkbox" class = "ingredients-list" /><span>Pear</span></label>
+                  <label for="fruit17"><input type="checkbox" class = "ingredients-list" /><span>Blackberry</span></label>
+                  <label for="fruit18"><input type="checkbox" class = "ingredients-list" /><span>Cherry</span></label>
+                  <label for="fruit19"><input type="checkbox" class = "ingredients-list" /><span>Date</span></label>
+                  <label for="fruit20"><input type="checkbox" class = "ingredients-list" /><span>Watermelon</span></label>
+                  <label for="fruit21"><input type="checkbox" class = "ingredients-list" /><span>Berries</span></label>
+                  <label for="fruit22"><input type="checkbox" class = "ingredients-list" /><span>Kiwi</span></label>
+                  <label for="fruit23"><input type="checkbox" class = "ingredients-list" /><span>Grapefruit</span></label>
+                  <label for="fruit24"><input type="checkbox" class = "ingredients-list" /><span>Mandarin</span></label>
+                  <label for="fruit25"><input type="checkbox" class = "ingredients-list" /><span>Craisins</span></label>
+                  <label for="fruit26"><input type="checkbox" class = "ingredients-list" /><span>Cantaloupe</span></label>
+                  <label for="fruit27"><input type="checkbox" class = "ingredients-list" /><span>Plum</span></label>
+                  <label for="fruit28"><input type="checkbox" class = "ingredients-list" /><span>Apricot</span></label>
+                  <label for="fruit29"><input type="checkbox" class = "ingredients-list" /><span>Clementine</span></label>
+                  <label for="fruit30"><input type="checkbox" class = "ingredients-list" /><span>Prunes</span></label>
+                  <label for="fruit31"><input type="checkbox" class = "ingredients-list" /><span>Aplle Butter</span></label>
+                  <label for="fruit32"><input type="checkbox" class = "ingredients-list" /><span>Pomegranate</span></label>
+                  <label for="fruit33"><input type="checkbox" class = "ingredients-list" /><span>Nectarine</span></label>
+                  <label for="fruit34"><input type="checkbox" class = "ingredients-list" /><span>Fig</span></label>
+                  <label for="fruit35"><input type="checkbox" class = "ingredients-list" /><span>Tangerine</span></label>
+                  <label for="fruit36"><input type="checkbox" class = "ingredients-list" /><span>Papaya</span></label>
+                  <label for="fruit37"><input type="checkbox" class = "ingredients-list" /><span>Sultanas</span></label>
+                  <label for="fruit38"><input type="checkbox" class = "ingredients-list" /><span>Plantain</span></label>
+                  <label for="fruit39"><input type="checkbox" class = "ingredients-list" /><span>Currant</span></label>
+                  <label for="fruit40"><input type="checkbox" class = "ingredients-list" /><span>Passion Fruit</span></label>
+                  <label for="fruit41"><input type="checkbox" class = "ingredients-list" /><span>Guava</span></label>
+                  <label for="fruit42"><input type="checkbox" class = "ingredients-list" /><span>Rhubarb</span></label>
+                  <label for="fruit43"><input type="checkbox" class = "ingredients-list" /><span>Persimmons</span></label>
+                  <label for="fruit44"><input type="checkbox" class = "ingredients-list" /><span>Lychee</span></label>
+                  <label for="fruit45"><input type="checkbox" class = "ingredients-list" /><span>Star Fruit</span></label>
+                  <label for="fruit46"><input type="checkbox" class = "ingredients-list" /><span>Kumquat</span></label>
+                  <label for="fruit47"><input type="checkbox" class = "ingredients-list" /><span>Tangelos</span></label>
+                  <label for="fruit48"><input type="checkbox" class = "ingredients-list" /><span>Crabapples</span></label>
+                  <label for="fruit49"><input type="checkbox" class = "ingredients-list" /><span>Honeydew</span></label>
+                  <label for="fruit50"><input type="checkbox" class = "ingredients-list" /><span>Lingonberry</span></label>
+                  <label for="fruit51"><input type="checkbox" class = "ingredients-list" /><span>Quince</span></label>
+                  <label for="fruit52"><input type="checkbox" class = "ingredients-list" /><span>Boysenberry</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/grains.jpg" alt="" />
+                  <label for="grains">Baking & Grains</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="grains1"><input type="checkbox" class = "ingredients-list" /><span>Rice</span></label>
+                  <label for="grains2"><input type="checkbox" class = "ingredients-list" /><span>Pasta</span></label>
+                  <label for="grains3"><input type="checkbox" class = "ingredients-list" /><span>Flour</span></label>
+                  <label for="grains4"><input type="checkbox" class = "ingredients-list" /><span>Bread</span></label>
+                  <label for="grains5"><input type="checkbox" class = "ingredients-list" /><span>Baking Powder</span></label>
+                  <label for="grains6"><input type="checkbox" class = "ingredients-list" /><span>Baking Soda</span></label>
+                  <label for="grains7"><input type="checkbox" class = "ingredients-list" /><span>Bread Crumbs</span></label>
+                  <label for="grains8"><input type="checkbox" class = "ingredients-list" /><span>Cornstarch</span></label>
+                  <label for="grains9"><input type="checkbox" class = "ingredients-list" /><span>Rolled Oats</span></label>
+                  <label for="grains10"><input type="checkbox" class = "ingredients-list" /><span>Noodle</span></label>
+                  <label for="grains11"><input type="checkbox" class = "ingredients-list" /><span>Flour Tortillas</span></label>
+                  <label for="grains12"><input type="checkbox" class = "ingredients-list" /><span>Pancake Mix</span></label>
+                  <label for="grains13"><input type="checkbox" class = "ingredients-list" /><span>Yeast</span></label>
+                  <label for="grains14"><input type="checkbox" class = "ingredients-list" /><span>Cracker</span></label>
+                  <label for="grains15"><input type="checkbox" class = "ingredients-list" /><span>Quinoa</span></label>
+                  <label for="grains16"><input type="checkbox" class = "ingredients-list" /><span>Brown Rice</span></label>
+                  <label for="grains17"><input type="checkbox" class = "ingredients-list" /><span>Cornmeal</span></label>
+                  <label for="grains18"><input type="checkbox" class = "ingredients-list" /><span>Cake Mix</span></label>
+                  <label for="grains19"><input type="checkbox" class = "ingredients-list" /><span>Popcorn</span></label>
+                  <label for="grains20"><input type="checkbox" class = "ingredients-list" /><span>Saltines</span></label>
+                  <label for="grains21"><input type="checkbox" class = "ingredients-list" /><span>Macaroni Cheese Mix</span></label>
+                  <label for="grains22"><input type="checkbox" class = "ingredients-list" /><span>Corn Tortillas</span></label>
+                  <label for="grains23"><input type="checkbox" class = "ingredients-list" /><span>Ramen</span></label>
+                  <label for="grains24"><input type="checkbox" class = "ingredients-list" /><span>Cereal</span></label>
+                  <label for="grains25"><input type="checkbox" class = "ingredients-list" /><span>Biscuits</span></label>
+                  <label for="grains26"><input type="checkbox" class = "ingredients-list" /><span>Stuffing Mix</span></label>
+                  <label for="grains27"><input type="checkbox" class = "ingredients-list" /><span>Couscous</span></label>
+                  <label for="grains28"><input type="checkbox" class = "ingredients-list" /><span>Pie Crust</span></label>
+                  <label for="grains29"><input type="checkbox" class = "ingredients-list" /><span>Bisquick</span></label>
+                  <label for="grains30"><input type="checkbox" class = "ingredients-list" /><span>Chips</span></label>
+                  <label for="grains31"><input type="checkbox" class = "ingredients-list" /><span>Angel Hair</span></label>
+                  <label for="grains32"><input type="checkbox" class = "ingredients-list" /><span>Coconut Flake</span></label>
+                  <label for="grains33"><input type="checkbox" class = "ingredients-list" /><span>Bread Flour</span></label>
+                  <label for="grains34"><input type="checkbox" class = "ingredients-list" /><span>Croutons</span></label>
+                  <label for="grains35"><input type="checkbox" class = "ingredients-list" /><span>Lasagne</span></label>
+                  <label for="grains36"><input type="checkbox" class = "ingredients-list" /><span>Pizza Dough</span></label>
+                  <label for="grains37"><input type="checkbox" class = "ingredients-list" /><span>Bagel</span></label>
+                  <label for="grains38"><input type="checkbox" class = "ingredients-list" /><span>Puff Pastry</span></label>
+                  <label for="grains39"><input type="checkbox" class = "ingredients-list" /><span>Hot Dog Bun</span></label>
+                  <label for="grains40"><input type="checkbox" class = "ingredients-list" /><span>Barley</span></label>
+                  <label for="grains41"><input type="checkbox" class = "ingredients-list" /><span>Multigrain Bread</span></label>
+                  <label for="grains42"><input type="checkbox" class = "ingredients-list" /><span>Potato Flakes</span></label>
+                  <label for="grains43"><input type="checkbox" class = "ingredients-list" /><span>Pretzel</span></label>
+                  <label for="grains44"><input type="checkbox" class = "ingredients-list" /><span>Cornbread</span></label>
+                  <label for="grains45"><input type="checkbox" class = "ingredients-list" /><span>Muffin</span></label>
+                  <label for="grains46"><input type="checkbox" class = "ingredients-list" /><span>Cornflour</span></label>
+                  <label for="grains47"><input type="checkbox" class = "ingredients-list" /><span>Crescent Roll Dough</span></label>
+                  <label for="grains48"><input type="checkbox" class = "ingredients-list" /><span>Cream of Wheat</span></label>
+                  <label for="grains49"><input type="checkbox" class = "ingredients-list" /><span>Coconut Flour</span></label>
+                  <label for="grains50"><input type="checkbox" class = "ingredients-list" /><span>Pita</span></label>
+                  <label for="grains51"><input type="checkbox" class = "ingredients-list" /><span>Risotto</span></label>
+                  <label for="grains52"><input type="checkbox" class = "ingredients-list" /><span>Muffin Mix</span></label>
+                  <label for="grains53"><input type="checkbox" class = "ingredients-list" /><span>Ravioli</span></label>
+                  <label for="grains54"><input type="checkbox" class = "ingredients-list" /><span>Wheat</span></label>
+                  <label for="grains55"><input type="checkbox" class = "ingredients-list" /><span>Rice Flour</span></label>
+                  <label for="grains56"><input type="checkbox" class = "ingredients-list" /><span>Baguette</span></label>
+                  <label for="grains57"><input type="checkbox" class = "ingredients-list" /><span>Gnocchi</span></label>
+                  <label for="grains58"><input type="checkbox" class = "ingredients-list" /><span>Vermicelli</span></label>
+                  <label for="grains59"><input type="checkbox" class = "ingredients-list" /><span>Wheat Germ</span></label>
+                  <label for="grains60"><input type="checkbox" class = "ingredients-list" /><span>Buckwheat</span></label>
+                  <label for="grains61"><input type="checkbox" class = "ingredients-list" /><span>Croissants</span></label>
+                  <label for="grains62"><input type="checkbox" class = "ingredients-list" /><span>Bread Dough</span></label>
+                  <label for="grains63"><input type="checkbox" class = "ingredients-list" /><span>Yeast Flake</span></label>
+                  <label for="grains64"><input type="checkbox" class = "ingredients-list" /><span>Potato Starch</span></label>
+                  <label for="grains65"><input type="checkbox" class = "ingredients-list" /><span>Breadsticks</span></label>
+                  <label for="grains66"><input type="checkbox" class = "ingredients-list" /><span>Starch</span></label>
+                  <label for="grains67"><input type="checkbox" class = "ingredients-list" /><span>Whole Wheat Flour</span></label>
+                  <label for="grains68"><input type="checkbox" class = "ingredients-list" /><span>Gram Flour</span></label>
+                  <label for="grains69"><input type="checkbox" class = "ingredients-list" /><span>Wafer</span></label>
+                  <label for="grains70"><input type="checkbox" class = "ingredients-list" /><span>Bran</span></label>
+                  <label for="grains71"><input type="checkbox" class = "ingredients-list" /><span>Sponge Cake</span></label>
+                  <label for="grains72"><input type="checkbox" class = "ingredients-list" /><span>Malt Extract</span></label>
+                  <label for="grains73"><input type="checkbox" class = "ingredients-list" /><span>Sorghum Flour</span></label>
+                  <label for="grains74"><input type="checkbox" class = "ingredients-list" /><span>Shortcrust Pastry</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/sweetner.jpg" alt="" />
+                  <label for="Sweetners">Sweetners</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content checkboxes">
+                  <label for="sweetner1"><input type="checkbox" class = "ingredients-list" /><span>Sugar</span></label>
+                  <label for="sweetner2"><input type="checkbox" class = "ingredients-list" /><span>Brown Sugar</span></label>
+                  <label for="sweetner3"><input type="checkbox" class = "ingredients-list" /><span>Honey</span></label>
+                  <label for="sweetner4"><input type="checkbox" class = "ingredients-list" /><span>Confectioners Sugar</span></label>
+                  <label for="sweetner5"><input type="checkbox" class = "ingredients-list" /><span>Maple Syrup</span></label>
+                  <label for="sweetner6"><input type="checkbox" class = "ingredients-list" /><span>Corn Syrup</span></label>
+                  <label for="sweetner7"><input type="checkbox" class = "ingredients-list" /><span>Molasses</span></label>
+                  <label for="sweetner8"><input type="checkbox" class = "ingredients-list" /><span>Artificial Sweetener</span></label>
+                  <label for="sweetner9"><input type="checkbox" class = "ingredients-list" /><span>Agave Nectar</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/spices.jpg" alt="" />
+                  <label for="spices">Spices</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="spices1"><input type="checkbox" class = "ingredients-list" /><span>Cinnamon</span></label>
+                  <label for="spices2"><input type="checkbox" class = "ingredients-list" /><span>Vanilla</span></label>
+                  <label for="spices3"><input type="checkbox" class = "ingredients-list" /><span>Garlic Powder</span></label>
+                  <label for="spices4"><input type="checkbox" class = "ingredients-list" /><span>Paprika</span></label>
+                  <label for="spices5"><input type="checkbox" class = "ingredients-list" /><span>Oregano</span></label>
+                  <label for="spices6"><input type="checkbox" class = "ingredients-list" /><span>Chili Powder</span></label>
+                  <label for="spices7"><input type="checkbox" class = "ingredients-list" /><span>Red Pepper Flake</span></label>
+                  <label for="spices8"><input type="checkbox" class = "ingredients-list" /><span>Cumin</span></label>
+                  <label for="spices9"><input type="checkbox" class = "ingredients-list" /><span>Cayenne</span></label>
+                  <label for="spices10"><input type="checkbox" class = "ingredients-list" /><span>Italian Seasoning</span></label>
+                  <label for="spices11"><input type="checkbox" class = "ingredients-list" /><span>Thyme</span></label>
+                  <label for="spices12"><input type="checkbox" class = "ingredients-list" /><span>Onion Powder</span></label>
+                  <label for="spices13"><input type="checkbox" class = "ingredients-list" /><span>Nutmeg</span></label>
+                  <label for="spices14"><input type="checkbox" class = "ingredients-list" /><span>Ground Nutmeg</span></label>
+                  <label for="spices15"><input type="checkbox" class = "ingredients-list" /><span>Curry Powder</span></label>
+                  <label for="spices16"><input type="checkbox" class = "ingredients-list" /><span>Bay Leaf</span></label>
+                  <label for="spices17"><input type="checkbox" class = "ingredients-list" /><span>Taco Seasoning</span></label>
+                  <label for="spices18"><input type="checkbox" class = "ingredients-list" /><span>Sage</span></label>
+                  <label for="spices19"><input type="checkbox" class = "ingredients-list" /><span>Clove</span></label>
+                  <label for="spices20"><input type="checkbox" class = "ingredients-list" /><span>Allspice</span></label>
+                  <label for="spices21"><input type="checkbox" class = "ingredients-list" /><span>Turmeric</span></label>
+                  <label for="spices22"><input type="checkbox" class = "ingredients-list" /><span>Chive</span></label>
+                  <label for="spices23"><input type="checkbox" class = "ingredients-list" /><span>Peppercorn</span></label>
+                  <label for="spices24"><input type="checkbox" class = "ingredients-list" /><span>Ground Coriander</span></label>
+                  <label for="spices25"><input type="checkbox" class = "ingredients-list" /><span>Cajun Seasoning</span></label>
+                  <label for="spices23"><input type="checkbox" class = "ingredients-list" /><span>Corriander</span></label>
+                  <label for="spices27"><input type="checkbox" class = "ingredients-list" /><span>Celery Salt</span></label>
+                  <label for="spices28"><input type="checkbox" class = "ingredients-list" /><span>Vanilla Essence</span></label>
+                  <label for="spices29"><input type="checkbox" class = "ingredients-list" /><span>Herbs</span></label>
+                  <label for="spices30"><input type="checkbox" class = "ingredients-list" /><span>Steak Seassoning</span></label>
+                  <label for="spices31"><input type="checkbox" class = "ingredients-list" /><span>Poultry Seasoning</span></label>
+                  <label for="spices32"><input type="checkbox" class = "ingredients-list" /><span>Chile Powder</span></label>
+                  <label for="spices33"><input type="checkbox" class = "ingredients-list" /><span>Cardamom</span></label>
+                  <label for="spices34"><input type="checkbox" class = "ingredients-list" /><span>Italian Herbs</span></label>
+                  <label for="spices35"><input type="checkbox" class = "ingredients-list" /><span>Tarragon</span></label>
+                  <label for="spices36"><input type="checkbox" class = "ingredients-list" /><span>Garam Masala</span></label>
+                  <label for="spices37"><input type="checkbox" class = "ingredients-list" /><span>Marjoram</span></label>
+                  <label for="spices38"><input type="checkbox" class = "ingredients-list" /><span>Mustard Seed</span></label>
+                  <label for="spices39"><input type="checkbox" class = "ingredients-list" /><span>Celery Seed</span></label>
+                  <label for="spices40"><input type="checkbox" class = "ingredients-list" /><span>Chinese Five Spice</span></label>
+                  <label for="spices41"><input type="checkbox" class = "ingredients-list" /><span>Italian Spice</span></label>
+                  <label for="spices42"><input type="checkbox" class = "ingredients-list" /><span>Saffron</span></label>
+                  <label for="spices43"><input type="checkbox" class = "ingredients-list" /><span>Onion Flake</span></label>
+                  <label for="spices44"><input type="checkbox" class = "ingredients-list" /><span>Herbes De Provence</span></label>
+                  <label for="spices45"><input type="checkbox" class = "ingredients-list" /><span>Chipotle</span></label>
+                  <label for="spices46"><input type="checkbox" class = "ingredients-list" /><span>Dill Seed</span></label>
+                  <label for="spices47"><input type="checkbox" class = "ingredients-list" /><span>Fennel Seed</span></label>
+                  <label for="spices48"><input type="checkbox" class = "ingredients-list" /><span>Caraway</span></label>
+                  <label for="spices49"><input type="checkbox" class = "ingredients-list" /><span>Cacao</span></label>
+                  <label for="spices50"><input type="checkbox" class = "ingredients-list" /><span>Star Anise</span></label>
+                  <label for="spices51"><input type="checkbox" class = "ingredients-list" /><span>Savory</span></label>
+                  <label for="spices52"><input type="checkbox" class = "ingredients-list" /><span>Chili Paste</span></label>
+                  <label for="spices53"><input type="checkbox" class = "ingredients-list" /><span>Tamarind</span></label>
+                  <label for="spices54"><input type="checkbox" class = "ingredients-list" /><span>Aniseed</span></label>
+                  <label for="spices55"><input type="checkbox" class = "ingredients-list" /><span>Fenugreek</span></label>
+                  <label for="spices56"><input type="checkbox" class = "ingredients-list" /><span>Lavender</span></label>
+                  <label for="spices57"><input type="checkbox" class = "ingredients-list" /><span>Old Bay Seasoning</span></label>
+                  <label for="spices58"><input type="checkbox" class = "ingredients-list" /><span>Lemon Balm</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/seasonings.jpg" alt="" />
+                  <label for="seasonings">Seasonings</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="seasoning1"><input type="checkbox" class = "ingredients-list" /><span>Bouillon</span></label>
+                  <label for="seasoning2"><input type="checkbox" class = "ingredients-list" /><span>Ground Ginger</span></label>
+                  <label for="seasoning3"><input type="checkbox" class = "ingredients-list" /><span>Sesame Seed</span></label>
+                  <label for="seasoning4"><input type="checkbox" class = "ingredients-list" /><span>Cream of Tartar</span></label>
+                  <label for="seasoning5"><input type="checkbox" class = "ingredients-list" /><span>Chili Sauce</span></label>
+                  <label for="seasoning6"><input type="checkbox" class = "ingredients-list" /><span>Soya Sauce</span></label>
+                  <label for="seasoning7"><input type="checkbox" class = "ingredients-list" /><span>Apple Cider</span></label>
+                  <label for="seasoning8"><input type="checkbox" class = "ingredients-list" /><span>Hoisin Sauce</span></label>
+                  <label for="seasoning9"><input type="checkbox" class = "ingredients-list" /><span>Liquid Smoke</span></label>
+                  <label for="seasoning10"><input type="checkbox" class = "ingredients-list" /><span>Rice Wine</span></label>
+                  <label for="seasoning11"><input type="checkbox" class = "ingredients-list" /><span>Vegetable Bouillon</span></label>
+                  <label for="seasoning12"><input type="checkbox" class = "ingredients-list" /><span>Poppy Seed</span></label>
+                  <label for="seasoning13"><input type="checkbox" class = "ingredients-list" /><span>Balsamic Glaze</span></label>
+                  <label for="seasoning14"><input type="checkbox" class = "ingredients-list" /><span>Miso</span></label>
+                  <label for="seasoning15"><input type="checkbox" class = "ingredients-list" /><span>Wasabi</span></label>
+                  <label for="seasoning16"><input type="checkbox" class = "ingredients-list" /><span>Fish Stock</span></label>
+                  <label for="seasoning17"><input type="checkbox" class = "ingredients-list" /><span>Rose Water</span></label>
+                  <label for="seasoning18"><input type="checkbox" class = "ingredients-list" /><span>Pickling Salt</span></label>
+                  <label for="seasoning19"><input type="checkbox" class = "ingredients-list" /><span>Champagne Vinegar</span></label>
+                  <label for="seasoning20"><input type="checkbox" class = "ingredients-list" /><span>Bbq Rub</span></label>
+                  <label for="seasoning21"><input type="checkbox" class = "ingredients-list" /><span>Jamaican Jerk Spice</span></label>
+                  <label for="seasoning22"><input type="checkbox" class = "ingredients-list" /><span>Accent Seasoning</span></label>
+                  <label for="seasoning23"><input type="checkbox" class = "ingredients-list" /><span>Pickling Spice</span></label>
+                  <label for="seasoning24"><input type="checkbox" class = "ingredients-list" /><span>Mustard Powder</span></label>
+                  <label for="seasoning25"><input type="checkbox" class = "ingredients-list" /><span>Mango Powder</span></label>
+                  <label for="seasoning26"><input type="checkbox" class = "ingredients-list" /><span>Adobo Seasoning</span></label>
+                  <label for="seasoning27"><input type="checkbox" class = "ingredients-list" /><span>Kasuri Methi</span></label>
+                  <label for="seasoning28"><input type="checkbox" class = "ingredients-list" /><span>Matcha Powder</span></label>
+                  <label for="seasoning29"><input type="checkbox" class = "ingredients-list" /><span>Caribbean Jerk Seasoning</span></label>
+                  <label for="seasoning30"><input type="checkbox" class = "ingredients-list" /><span>Brine</span></label>
+                  <label for="seasoning31"><input type="checkbox" class = "ingredients-list" /><span>Cassia</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/fish.jpg" alt="" />
+                  <label for="fish">Fish</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="fish1"><input type="checkbox" class = "ingredients-list" /><span>Canned Tuna</span></label>
+                  <label for="fish2"><input type="checkbox" class = "ingredients-list" /><span>Salmon</span></label>
+                  <label for="fish3"><input type="checkbox" class = "ingredients-list" /><span>Tilapia</span></label>
+                  <label for="fish4"><input type="checkbox" class = "ingredients-list" /><span>Fish Fillets</span></label>
+                  <label for="fish5"><input type="checkbox" class = "ingredients-list" /><span>Cod</span></label>
+                  <label for="fish6"><input type="checkbox" class = "ingredients-list" /><span>Canned Salmon</span></label>
+                  <label for="fish7"><input type="checkbox" class = "ingredients-list" /><span>Anchovy</span></label>
+                  <label for="fish8"><input type="checkbox" class = "ingredients-list" /><span>Smoked Salmon</span></label>
+                  <label for="fish9"><input type="checkbox" class = "ingredients-list" /><span>Tuna Steak</span></label>
+                  <label for="fish10"><input type="checkbox" class = "ingredients-list" /><span>Whitefish</span></label>
+                  <label for="fish11"><input type="checkbox" class = "ingredients-list" /><span>Trout</span></label>
+                  <label for="fish12"><input type="checkbox" class = "ingredients-list" /><span>Haddock</span></label>
+                  <label for="fish13"><input type="checkbox" class = "ingredients-list" /><span>Catfish</span></label>
+                  <label for="fish14"><input type="checkbox" class = "ingredients-list" /><span>Mahi Mahi</span></label>
+                  <label for="fish15"><input type="checkbox" class = "ingredients-list" /><span>Flounder</span></label>
+                  <label for="fish16"><input type="checkbox" class = "ingredients-list" /><span>Mackerel</span></label>
+                  <label for="fish17"><input type="checkbox" class = "ingredients-list" /><span>Sea Bass</span></label>
+                  <label for="fish18"><input type="checkbox" class = "ingredients-list" /><span>Red Snapper</span></label>
+                  <label for="fish19"><input type="checkbox" class = "ingredients-list" /><span>Sword Fish</span></label>
+                  <label for="fish20"><input type="checkbox" class = "ingredients-list" /><span>Caviar</span></label>
+                  <label for="fish21"><input type="checkbox" class = "ingredients-list" /><span>Lemon Sole</span></label>
+                  <label for="fish22"><input type="checkbox" class = "ingredients-list" /><span>Perch</span></label>
+                  <label for="fish23"><input type="checkbox" class = "ingredients-list" /><span>Pike</span></label>
+                  <label for="fish24"><input type="checkbox" class = "ingredients-list" /><span>Barramundi</span></label>
+                  <label for="fish25"><input type="checkbox" class = "ingredients-list" /><span>Eel</span></label>
+                  <label for="fish26"><input type="checkbox" class = "ingredients-list" /><span>Bluefish</span></label>
+                  <label for="fish27"><input type="checkbox" class = "ingredients-list" /><span>Carp</span></label>
+                  <label for="fish28"><input type="checkbox" class = "ingredients-list" /><span>Cuttlefish</span></label>
+                  <label for="fish29"><input type="checkbox" class = "ingredients-list" /><span>John Dory</span></label>
+                  <label for="fish30"><input type="checkbox" class = "ingredients-list" /><span>Sole</span></label>
+                  <label for="fish31"><input type="checkbox" class = "ingredients-list" /><span>Monkfish</span></label>
+                  <label for="fish32"><input type="checkbox" class = "ingredients-list" /><span>Rockfish</span></label>
+                  <label for="fish33"><input type="checkbox" class = "ingredients-list" /><span>Marlin</span></label>
+                  <label for="fish34"><input type="checkbox" class = "ingredients-list" /><span>Amberjack</span></label>
+                  <label for="fish35"><input type="checkbox" class = "ingredients-list" /><span>Sturgeon</span></label>
+                  <label for="fish36"><input type="checkbox" class = "ingredients-list" /><span>Grouper</span></label>
+                  <label for="fish37"><input type="checkbox" class = "ingredients-list" /><span>Herring</span></label>
+                  <label for="fish38"><input type="checkbox" class = "ingredients-list" /><span>Pollock</span></label>
+                  <label for="fish39"><input type="checkbox" class = "ingredients-list" /><span>Pompano</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/seafood.jpg" alt="" />
+                  <label for="seafood">Seafood</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="seafood1"><input type="checkbox" class = "ingredients-list" /><span>Shrimp</span></label>
+                  <label for="seafood2"><input type="checkbox" class = "ingredients-list" /><span>Crab</span></label>
+                  <label for="seafood3"><input type="checkbox" class = "ingredients-list" /><span>Prawns</span></label>
+                  <label for="seafood4"><input type="checkbox" class = "ingredients-list" /><span>Scallop</span></label>
+                  <label for="seafood5"><input type="checkbox" class = "ingredients-list" /><span>Clam</span></label>
+                  <label for="seafood6"><input type="checkbox" class = "ingredients-list" /><span>Lobster</span></label>
+                  <label for="seafood7"><input type="checkbox" class = "ingredients-list" /><span>Mussel</span></label>
+                  <label for="seafood8"><input type="checkbox" class = "ingredients-list" /><span>Oyster</span></label>
+                  <label for="seafood9"><input type="checkbox" class = "ingredients-list" /><span>Squid</span></label>
+                  <label for="seafood10"><input type="checkbox" class = "ingredients-list" /><span>Calamari</span></label>
+                  <label for="seafood11"><input type="checkbox" class = "ingredients-list" /><span>Crawfish</span></label>
+                  <label for="seafood12"><input type="checkbox" class = "ingredients-list" /><span>Octopus</span></label>
+                  <label for="seafood13"><input type="checkbox" class = "ingredients-list" /><span>Cockle</span></label>
+                  <label for="seafood14"><input type="checkbox" class = "ingredients-list" /><span>Conch</span></label>
+                  <label for="seafood15"><input type="checkbox" class = "ingredients-list" /><span>Sea Urchin</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/meats.png" alt="" />
+                  <label for="meats">Meats</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="meat1"><input type="checkbox" class = "ingredients-list" /><span>Chicken Breast</span></label>
+                  <label for="meat2"><input type="checkbox" class = "ingredients-list" /><span>Ground Beef</span></label>
+                  <label for="meat3"><input type="checkbox" class = "ingredients-list" /><span>Bacon</span></label>
+                  <label for="meat4"><input type="checkbox" class = "ingredients-list" /><span>Sausage</span></label>
+                  <label for="meat5"><input type="checkbox" class = "ingredients-list" /><span>Beef Steak</span></label>
+                  <label for="meat6"><input type="checkbox" class = "ingredients-list" /><span>Ham</span></label>
+                  <label for="meat7"><input type="checkbox" class = "ingredients-list" /><span>Hot Dog</span></label>
+                  <label for="meat8"><input type="checkbox" class = "ingredients-list" /><span>Pork Chops</span></label>
+                  <label for="meat9"><input type="checkbox" class = "ingredients-list" /><span>Chicken Thighs</span></label>
+                  <label for="meat10"><input type="checkbox" class = "ingredients-list" /><span>Ground Turkey</span></label>
+                  <label for="meat11"><input type="checkbox" class = "ingredients-list" /><span>Cooked Chicken</span></label>
+                  <label for="meat12"><input type="checkbox" class = "ingredients-list" /><span>Turkey</span></label>
+                  <label for="meat13"><input type="checkbox" class = "ingredients-list" /><span>Pork</span></label>
+                  <label for="meat14"><input type="checkbox" class = "ingredients-list" /><span>Pepperoni</span></label>
+                  <label for="meat15"><input type="checkbox" class = "ingredients-list" /><span>Whole Chicken</span></label>
+                  <label for="meat16"><input type="checkbox" class = "ingredients-list" /><span>Chicken Leg</span></label>
+                  <label for="meat17"><input type="checkbox" class = "ingredients-list" /><span>Ground Pork</span></label>
+                  <label for="meat18"><input type="checkbox" class = "ingredients-list" /><span>Chorizo</span></label>
+                  <label for="meat19"><input type="checkbox" class = "ingredients-list" /><span>Chicken Wings</span></label>
+                  <label for="meat20"><input type="checkbox" class = "ingredients-list" /><span>Beef Roast</span></label>
+                  <label for="meat21"><input type="checkbox" class = "ingredients-list" /><span>Polish Sausage</span></label>
+                  <label for="meat22"><input type="checkbox" class = "ingredients-list" /><span>Salami</span></label>
+                  <label for="meat23"><input type="checkbox" class = "ingredients-list" /><span>Pork Roast</span></label>
+                  <label for="meat24"><input type="checkbox" class = "ingredients-list" /><span>Ground Chicken</span></label>
+                  <label for="meat25"><input type="checkbox" class = "ingredients-list" /><span>Pork Ribs</span></label>
+                  <label for="meat26"><input type="checkbox" class = "ingredients-list" /><span>Spam</span></label>
+                  <label for="meat27"><input type="checkbox" class = "ingredients-list" /><span>Pork Shoulder</span></label>
+                  <label for="meat28"><input type="checkbox" class = "ingredients-list" /><span>Bologna</span></label>
+                  <label for="meat29"><input type="checkbox" class = "ingredients-list" /><span>Lamb</span></label>
+                  <label for="meat30"><input type="checkbox" class = "ingredients-list" /><span>Corned Beef</span></label>
+                  <label for="meat31"><input type="checkbox" class = "ingredients-list" /><span>Chicken Roast</span></label>
+                  <label for="meat32"><input type="checkbox" class = "ingredients-list" /><span>Lamb Chops</span></label>
+                  <label for="meat33"><input type="checkbox" class = "ingredients-list" /><span>Ground Lamb</span></label>
+                  <label for="meat34"><input type="checkbox" class = "ingredients-list" /><span>Beef Ribs</span></label>
+                  <label for="meat35"><input type="checkbox" class = "ingredients-list" /><span>Duck</span></label>
+                  <label for="meat36"><input type="checkbox" class = "ingredients-list" /><span>Pork Belly</span></label>
+                  <label for="meat37"><input type="checkbox" class = "ingredients-list" /><span>Beef Liver</span></label>
+                  <label for="meat38"><input type="checkbox" class = "ingredients-list" /><span>Leg of Lamb</span></label>
+                  <label for="meat39"><input type="checkbox" class = "ingredients-list" /><span>Chicken Giblets</span></label>
+                  <label for="meat40"><input type="checkbox" class = "ingredients-list" /><span>Cornish Hen</span></label>
+                  <label for="meat41"><input type="checkbox" class = "ingredients-list" /><span>Lamb Shoulder</span></label>
+                  <label for="meat42"><input type="checkbox" class = "ingredients-list" /><span>Lamb Shank</span></label>
+                  <label for="meat43"><input type="checkbox" class = "ingredients-list" /><span>Deer</span></label>
+                  <label for="meat44"><input type="checkbox" class = "ingredients-list" /><span>Pastrami</span></label>
+                  <label for="meat45"><input type="checkbox" class = "ingredients-list" /><span>Rabbit</span></label>
+                  <label for="meat46"><input type="checkbox" class = "ingredients-list" /><span>Sliced Turkey</span></label>
+                  <label for="meat47"><input type="checkbox" class = "ingredients-list" /><span>Pork Loin</span></label>
+                  <label for="meat48"><input type="checkbox" class = "ingredients-list" /><span>Lamb Loin</span></label>
+                  <label for="meat49"><input type="checkbox" class = "ingredients-list" /><span>Marrow Bones</span></label>
+                  <label for="meat50"><input type="checkbox" class = "ingredients-list" /><span>Goose</span></label>
+                  <label for="meat51"><input type="checkbox" class = "ingredients-list" /><span>Chicken Tenders</span></label>
+                  <label for="meat52"><input type="checkbox" class = "ingredients-list" /><span>Pheasant</span></label>
+                  <label for="meat53"><input type="checkbox" class = "ingredients-list" /><span>Lamb Liver</span></label>
+                  <label for="meat54"><input type="checkbox" class = "ingredients-list" /><span>Turkey Liver</span></label>
+                  <label for="meat55"><input type="checkbox" class = "ingredients-list" /><span>Pork Liver</span></label>
+                  <label for="meat56"><input type="checkbox" class = "ingredients-list" /><span>Wild Boar</span></label>
+                  <label for="meat57"><input type="checkbox" class = "ingredients-list" /><span>Snail</span></label>
+                  <label for="meat58"><input type="checkbox" class = "ingredients-list" /><span>Pigeon</span></label>
+                  <label for="meat59"><input type="checkbox" class = "ingredients-list" /><span>Duck Liver</span></label>
+                  <label for="meat60"><input type="checkbox" class = "ingredients-list" /><span>Goose Liver</span></label>
+                  <label for="meat61"><input type="checkbox" class = "ingredients-list" /><span>Ostrich</span></label>
+                  <label for="meat62"><input type="checkbox" class = "ingredients-list" /><span>Alligator</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/condiments.jpg" alt="" />
+                  <label for="condiments">Condiments</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="condiments1"><input type="checkbox" class = "ingredients-list" /><span>Mayonnaise</span></label>
+                  <label for="condiments2"><input type="checkbox" class = "ingredients-list" /><span>Ketchup</span></label>
+                  <label for="condiments3"><input type="checkbox" class = "ingredients-list" /><span>Mustard</span></label>
+                  <label for="condiments4"><input type="checkbox" class = "ingredients-list" /><span>Vinegar</span></label>
+                  <label for="condiments5"><input type="checkbox" class = "ingredients-list" /><span>Soy Sauce</span></label>
+                  <label for="condiments6"><input type="checkbox" class = "ingredients-list" /><span>Balsamic Vinegar</span></label>
+                  <label for="condiments7"><input type="checkbox" class = "ingredients-list" /><span>Hot Sauce</span></label>
+                  <label for="condiments8"><input type="checkbox" class = "ingredients-list" /><span>Barbecue Sauce</span></label>
+                  <label for="condiments9"><input type="checkbox" class = "ingredients-list" /><span>Ranch Dressing</span></label>
+                  <label for="condiments10"><input type="checkbox" class = "ingredients-list" /><span>Wine Vinegar</span></label>
+                  <label for="condiments11"><input type="checkbox" class = "ingredients-list" /><span>Apple Cider Vinegar</span></label>
+                  <label for="condiments12"><input type="checkbox" class = "ingredients-list" /><span>Cider Vinegar</span></label>
+                  <label for="condiments13"><input type="checkbox" class = "ingredients-list" /><span>Italian Dressing</span></label>
+                  <label for="condiments14"><input type="checkbox" class = "ingredients-list" /><span>Rice Vinegar</span></label>
+                  <label for="condiments15"><input type="checkbox" class = "ingredients-list" /><span>Salad Dressing</span></label>
+                  <label for="condiments16"><input type="checkbox" class = "ingredients-list" /><span>Tabasco</span></label>
+                  <label for="condiments17"><input type="checkbox" class = "ingredients-list" /><span>Fish Sauce</span></label>
+                  <label for="condiments18"><input type="checkbox" class = "ingredients-list" /><span>Teriyaki</span></label>
+                  <label for="condiments19"><input type="checkbox" class = "ingredients-list" /><span>Steak Sauce</span></label>
+                  <label for="condiments20"><input type="checkbox" class = "ingredients-list" /><span>Tahini</span></label>
+                  <label for="condiments21"><input type="checkbox" class = "ingredients-list" /><span>Enchilada Sauce</span></label>
+                  <label for="condiments22"><input type="checkbox" class = "ingredients-list" /><span>Vinaigrette Dressing</span></label>
+                  <label for="condiments23"><input type="checkbox" class = "ingredients-list" /><span>Oyster Sauce</span></label>
+                  <label for="condiments24"><input type="checkbox" class = "ingredients-list" /><span>Honey Mustard</span></label>
+                  <label for="condiments25"><input type="checkbox" class = "ingredients-list" /><span>Sriracha</span></label>
+                  <label for="condiments26"><input type="checkbox" class = "ingredients-list" /><span>Caesar Dressing</span></label>
+                  <label for="condiments27"><input type="checkbox" class = "ingredients-list" /><span>Taco Sauce</span></label>
+                  <label for="condiments28"><input type="checkbox" class = "ingredients-list" /><span>Mirin</span></label>
+                  <label for="condiments29"><input type="checkbox" class = "ingredients-list" /><span>Blue Cheese Dressing</span></label>
+                  <label for="condiments30"><input type="checkbox" class = "ingredients-list" /><span>Sweet and Sour Sauce</span></label>
+                  <label for="condiments31"><input type="checkbox" class = "ingredients-list" /><span>Thousand Island</span></label>
+                  <label for="condiments32"><input type="checkbox" class = "ingredients-list" /><span>Buffalo Sauce</span></label>
+                  <label for="condiments33"><input type="checkbox" class = "ingredients-list" /><span>French Dressing</span></label>
+                  <label for="condiments34"><input type="checkbox" class = "ingredients-list" /><span>Cocktail Sauce</span></label>
+                  <label for="condiments35"><input type="checkbox" class = "ingredients-list" /><span>Sesame Dressing</span></label>
+                  <label for="condiments36"><input type="checkbox" class = "ingredients-list" /><span>Tzatziki Sauce</span></label>
+                  <label for="condiments37"><input type="checkbox" class = "ingredients-list" /><span>Marsala</span></label>
+                  <label for="condiments38"><input type="checkbox" class = "ingredients-list" /><span>Yuzu Sauce</span></label>
+                  <label for="condiments39"><input type="checkbox" class = "ingredients-list" /><span>Tartar Sauce</span></label>
+                  <label for="condiments40"><input type="checkbox" class = "ingredients-list" /><span>Cream Sauce</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/oils.jpg" alt="" />
+                  <label for="oils">Oils</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="oil1"><input type="checkbox" class = "ingredients-list" /><span>Olive Oil</span></label>
+                  <label for="oil2"><input type="checkbox" class = "ingredients-list" /><span>Vegetable Oil</span></label>
+                  <label for="oil3"><input type="checkbox" class = "ingredients-list" /><span>Cooking Spray</span></label>
+                  <label for="oil4"><input type="checkbox" class = "ingredients-list" /><span>Canola Oil</span></label>
+                  <label for="oil5"><input type="checkbox" class = "ingredients-list" /><span>Shortening</span></label>
+                  <label for="oil6"><input type="checkbox" class = "ingredients-list" /><span>Sesame Oil</span></label>
+                  <label for="oil7"><input type="checkbox" class = "ingredients-list" /><span>Coconut Oil</span></label>
+                  <label for="oil8"><input type="checkbox" class = "ingredients-list" /><span>Peanut Oil</span></label>
+                  <label for="oil9"><input type="checkbox" class = "ingredients-list" /><span>Sunflower Oil</span></label>
+                  <label for="oil10"><input type="checkbox" class = "ingredients-list" /><span>Grape Seed Oil</span></label>
+                  <label for="oil11"><input type="checkbox" class = "ingredients-list" /><span>Lard</span></label>
+                  <label for="oil12"><input type="checkbox" class = "ingredients-list" /><span>Corn Oil</span></label>
+                  <label for="oil13"><input type="checkbox" class = "ingredients-list" /><span>Almond Oil</span></label>
+                  <label for="oil14"><input type="checkbox" class = "ingredients-list" /><span>Walnut Oil</span></label>
+                  <label for="oil15"><input type="checkbox" class = "ingredients-list" /><span>Avocado Oil</span></label>
+                  <label for="oil16"><input type="checkbox" class = "ingredients-list" /><span>Sunflower Oil</span></label>
+                  <label for="oil17"><input type="checkbox" class = "ingredients-list" /><span>Hazelnut Oil</span></label>
+                  <label for="oil18"><input type="checkbox" class = "ingredients-list" /><span>Palm Oil</span></label>
+                  <label for="oil19"><input type="checkbox" class = "ingredients-list" /><span>Soybean Oil</span></label>
+                  <label for="oil20"><input type="checkbox" class = "ingredients-list" /><span>Mustard Oil</span></label>
+                  <label for="oil21"><input type="checkbox" class = "ingredients-list" /><span>Pistachio Oil</span></label>
+                  <label for="oil22"><input type="checkbox" class = "ingredients-list" /><span>Soya Oil</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/legumes.jpg" alt="" />
+                  <label for="legumes">Legumes</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="legume1"><input type="checkbox" class = "ingredients-list" /><span>Green Beans</span></label>
+                  <label for="legume2"><input type="checkbox" class = "ingredients-list" /><span>Peas</span></label>
+                  <label for="legume3"><input type="checkbox" class = "ingredients-list" /><span>Black Beans</span></label>
+                  <label for="legume4"><input type="checkbox" class = "ingredients-list" /><span>Chickpea</span></label>
+                  <label for="legume5"><input type="checkbox" class = "ingredients-list" /><span>Lentil</span></label>
+                  <label for="legume6"><input type="checkbox" class = "ingredients-list" /><span>Refried Beans</span></label>
+                  <label for="legume7"><input type="checkbox" class = "ingredients-list" /><span>Hummus</span></label>
+                  <label for="legume8"><input type="checkbox" class = "ingredients-list" /><span>Chilli Beans</span></label>
+                  <label for="legume9"><input type="checkbox" class = "ingredients-list" /><span>Lima Beans</span></label>
+                  <label for="legume10"><input type="checkbox" class = "ingredients-list" /><span>Kidney Beans</span></label>
+                  <label for="legume11"><input type="checkbox" class = "ingredients-list" /><span>Pinto Beans</span></label>
+                  <label for="legume12"><input type="checkbox" class = "ingredients-list" /><span>Edamame</span></label>
+                  <label for="legume13"><input type="checkbox" class = "ingredients-list" /><span>Split Peas</span></label>
+                  <label for="legume14"><input type="checkbox" class = "ingredients-list" /><span>Snap Peas</span></label>
+                  <label for="legume15"><input type="checkbox" class = "ingredients-list" /><span>Soybeans</span></label>
+                  <label for="legume16"><input type="checkbox" class = "ingredients-list" /><span>Cannellini Beans</span></label>
+                  <label for="legume17"><input type="checkbox" class = "ingredients-list" /><span>Navy Beans</span></label>
+                  <label for="legume18"><input type="checkbox" class = "ingredients-list" /><span>French Beans</span></label>
+                  <label for="legume19"><input type="checkbox" class = "ingredients-list" /><span>Red Beans</span></label>
+                  <label for="legume20"><input type="checkbox" class = "ingredients-list" /><span>Great Northern Beans</span></label>
+                  <label for="legume21"><input type="checkbox" class = "ingredients-list" /><span>Fava Beans</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/sauces.jpg" alt="" />
+                  <label for="sauces">Sauces</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="sauce1"><input type="checkbox" class = "ingredients-list" /><span>Tomato Sauce</span></label>
+                  <label for="sauce2"><input type="checkbox" class = "ingredients-list" /><span>Tomato Paste</span></label>
+                  <label for="sauce3"><input type="checkbox" class = "ingredients-list" /><span>Salsa</span></label>
+                  <label for="sauce4"><input type="checkbox" class = "ingredients-list" /><span>Pesto</span></label>
+                  <label for="sauce5"><input type="checkbox" class = "ingredients-list" /><span>Alfredo Sauce</span></label>
+                  <label for="sauce6"><input type="checkbox" class = "ingredients-list" /><span>Beef Gravy</span></label>
+                  <label for="sauce7"><input type="checkbox" class = "ingredients-list" /><span>Curry Paste</span></label>
+                  <label for="sauce8"><input type="checkbox" class = "ingredients-list" /><span>Chicken Gravy</span></label>
+                  <label for="sauce9"><input type="checkbox" class = "ingredients-list" /><span>Turkey Gravy</span></label>
+                  <label for="sauce10"><input type="checkbox" class = "ingredients-list" /><span>Cranberry Sauce</span></label>
+                  <label for="sauce11"><input type="checkbox" class = "ingredients-list" /><span>Mushroom Gravy</span></label>
+                  <label for="sauce12"><input type="checkbox" class = "ingredients-list" /><span>Sausage Gravy</span></label>
+                  <label for="sauce13"><input type="checkbox" class = "ingredients-list" /><span>Onion Gravy</span></label>
+                  <label for="sauce14"><input type="checkbox" class = "ingredients-list" /><span>Cream Gravy</span></label>
+                  <label for="sauce15"><input type="checkbox" class = "ingredients-list" /><span>Pork Gravy</span></label>
+                  <label for="sauce16"><input type="checkbox" class = "ingredients-list" /><span>Tomato Gravy</span></label>
+                  <label for="sauce17"><input type="checkbox" class = "ingredients-list" /><span>Giblet Gravy</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/alcohol.png" alt="" />
+                  <label for="alcohol">Alcohol</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="alcohol1"><input type="checkbox" class = "ingredients-list" /><span>White Wine</span></label>
+                  <label for="alcohol2"><input type="checkbox" class = "ingredients-list" /><span>Beer</span></label>
+                  <label for="alcohol3"><input type="checkbox" class = "ingredients-list" /><span>Red Wine</span></label>
+                  <label for="alcohol4"><input type="checkbox" class = "ingredients-list" /><span>Vodka</span></label>
+                  <label for="alcohol5"><input type="checkbox" class = "ingredients-list" /><span>Rum</span></label>
+                  <label for="alcohol6"><input type="checkbox" class = "ingredients-list" /><span>Whiskey</span></label>
+                  <label for="alcohol7"><input type="checkbox" class = "ingredients-list" /><span>Tequila</span></label>
+                  <label for="alcohol8"><input type="checkbox" class = "ingredients-list" /><span>Sherry</span></label>
+                  <label for="alcohol9"><input type="checkbox" class = "ingredients-list" /><span>Bourbon</span></label>
+                  <label for="alcohol10"><input type="checkbox" class = "ingredients-list" /><span>Cooking Wine</span></label>
+                  <label for="alcohol11"><input type="checkbox" class = "ingredients-list" /><span>Liqueur</span></label>
+                  <label for="alcohol12"><input type="checkbox" class = "ingredients-list" /><span>Brandy</span></label>
+                  <label for="alcohol13"><input type="checkbox" class = "ingredients-list" /><span>Gin</span></label>
+                  <label for="alcohol14"><input type="checkbox" class = "ingredients-list" /><span>Kahlua</span></label>
+                  <label for="alcohol15"><input type="checkbox" class = "ingredients-list" /><span>Irish Cream</span></label>
+                  <label for="alcohol16"><input type="checkbox" class = "ingredients-list" /><span>Triple Sec</span></label>
+                  <label for="alcohol17"><input type="checkbox" class = "ingredients-list" /><span>Champagne</span></label>
+                  <label for="alcohol18"><input type="checkbox" class = "ingredients-list" /><span>Amaretto</span></label>
+                  <label for="alcohol19"><input type="checkbox" class = "ingredients-list" /><span>Cabernet Sauvignon</span></label>
+                  <label for="alcohol20"><input type="checkbox" class = "ingredients-list" /><span>Vermouth</span></label>
+                  <label for="alcohol21"><input type="checkbox" class = "ingredients-list" /><span>Bitters</span></label>
+                  <label for="alcohol22"><input type="checkbox" class = "ingredients-list" /><span>Maraschino</span></label>
+                  <label for="alcohol23"><input type="checkbox" class = "ingredients-list" /><span>Sake</span></label>
+                  <label for="alcohol24"><input type="checkbox" class = "ingredients-list" /><span>Grand Marnier</span></label>
+                  <label for="alcohol25"><input type="checkbox" class = "ingredients-list" /><span>Masala</span></label>
+                  <label for="alcohol26"><input type="checkbox" class = "ingredients-list" /><span>Dessert Wine</span></label>
+                  <label for="alcohol27"><input type="checkbox" class = "ingredients-list" /><span>Port Wine</span></label>
+                  <label for="alcohol28"><input type="checkbox" class = "ingredients-list" /><span>Sparkling Wine</span></label>
+                  <label for="alcohol29"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Liqueur</span></label>
+                  <label for="alcohol30"><input type="checkbox" class = "ingredients-list" /><span>Burgundy Wine</span></label>
+                  <label for="alcohol31"><input type="checkbox" class = "ingredients-list" /><span>Blood Mary</span></label>
+                  <label for="alcohol32"><input type="checkbox" class = "ingredients-list" /><span>Curacao</span></label>
+                  <label for="alcohol33"><input type="checkbox" class = "ingredients-list" /><span>Raspberry Liquor</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/soup.jpg" alt="" />
+                  <label for="soup">Soup</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="soup1"><input type="checkbox" class = "ingredients-list" /><span>Chicken Broth</span></label>
+                  <label for="soup2"><input type="checkbox" class = "ingredients-list" /><span>Mushroom Soup</span></label>
+                  <label for="soup3"><input type="checkbox" class = "ingredients-list" /><span>Beef Broth</span></label>
+                  <label for="soup4"><input type="checkbox" class = "ingredients-list" /><span>Tomato Soup</span></label>
+                  <label for="soup5"><input type="checkbox" class = "ingredients-list" /><span>Vegetable Stock</span></label>
+                  <label for="soup6"><input type="checkbox" class = "ingredients-list" /><span>Chicken Soup</span></label>
+                  <label for="soup7"><input type="checkbox" class = "ingredients-list" /><span>Onion Soup</span></label>
+                  <label for="soup8"><input type="checkbox" class = "ingredients-list" /><span>Vegetable Soup</span></label>
+                  <label for="soup9"><input type="checkbox" class = "ingredients-list" /><span>Celery Soup</span></label>
+                  <label for="soup10"><input type="checkbox" class = "ingredients-list" /><span>Dashi</span></label>
+                  <label for="soup11"><input type="checkbox" class = "ingredients-list" /><span>Lamb Stock</span></label>
+                  <label for="soup12"><input type="checkbox" class = "ingredients-list" /><span>Pork Stock</span></label>
+                  <label for="soup13"><input type="checkbox" class = "ingredients-list" /><span>Veal Stock</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/nuts.jpg" alt="" />
+                  <label for="nuts">Nuts</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="nut1"><input type="checkbox" class = "ingredients-list" /><span>Peanut Butter</span></label>
+                  <label for="nut2"><input type="checkbox" class = "ingredients-list" /><span>Almond</span></label>
+                  <label for="nut3"><input type="checkbox" class = "ingredients-list" /><span>Walnut</span></label>
+                  <label for="nut4"><input type="checkbox" class = "ingredients-list" /><span>Pecan</span></label>
+                  <label for="nut5"><input type="checkbox" class = "ingredients-list" /><span>Peanut</span></label>
+                  <label for="nut6"><input type="checkbox" class = "ingredients-list" /><span>Cashew</span></label>
+                  <label for="nut7"><input type="checkbox" class = "ingredients-list" /><span>Flax</span></label>
+                  <label for="nut8"><input type="checkbox" class = "ingredients-list" /><span>Pine Nut</span></label>
+                  <label for="nut9"><input type="checkbox" class = "ingredients-list" /><span>Pistachio</span></label>
+                  <label for="nut10"><input type="checkbox" class = "ingredients-list" /><span>Almond Meal</span></label>
+                  <label for="nut11"><input type="checkbox" class = "ingredients-list" /><span>Hazelnut</span></label>
+                  <label for="nut12"><input type="checkbox" class = "ingredients-list" /><span>Chestnut</span></label>
+                  <label for="nut13"><input type="checkbox" class = "ingredients-list" /><span>Almond Paste</span></label>
+                  <label for="nut14"><input type="checkbox" class = "ingredients-list" /><span>Macaroon</span></label>
+                  <label for="nut15"><input type="checkbox" class = "ingredients-list" /><span>Praline</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/dairySubstitutes.jpg" alt="" />
+                  <label for="dairySubstitutes">Dairy Substitutes</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="dairySubstitute1"><input type="checkbox" class = "ingredients-list" /><span>Margarine</span></label>
+                  <label for="dairySubstitute2"><input type="checkbox" class = "ingredients-list" /><span>Coconut Milk</span></label>
+                  <label for="dairySubstitute3"><input type="checkbox" class = "ingredients-list" /><span>Almond Milk</span></label>
+                  <label for="dairySubstitute4"><input type="checkbox" class = "ingredients-list" /><span>Soy Milk</span></label>
+                  <label for="dairySubstitute5"><input type="checkbox" class = "ingredients-list" /><span>Rice Milk</span></label>
+                  <label for="dairySubstitute6"><input type="checkbox" class = "ingredients-list" /><span>Hemp Milk</span></label>
+                  <label for="dairySubstitute7"><input type="checkbox" class = "ingredients-list" /><span>Non-Dairy Creamer</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/beverages.jpg" alt="" />
+                  <label for="beverages">Beverages</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="beverage1"><input type="checkbox" class = "ingredients-list" /><span>Coffee</span></label>
+                  <label for="beverage2"><input type="checkbox" class = "ingredients-list" /><span>Orange Juice</span></label>
+                  <label for="beverage3"><input type="checkbox" class = "ingredients-list" /><span>Tea</span></label>
+                  <label for="beverage4"><input type="checkbox" class = "ingredients-list" /><span>Green Tea</span></label>
+                  <label for="beverage5"><input type="checkbox" class = "ingredients-list" /><span>Apple Juice</span></label>
+                  <label for="beverage6"><input type="checkbox" class = "ingredients-list" /><span>Tomato Juice</span></label>
+                  <label for="beverage7"><input type="checkbox" class = "ingredients-list" /><span>Coke</span></label>
+                  <label for="beverage8"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Milk</span></label>
+                  <label for="beverage9"><input type="checkbox" class = "ingredients-list" /><span>Pineapple Juice</span></label>
+                  <label for="beverage10"><input type="checkbox" class = "ingredients-list" /><span>Lemonade</span></label>
+                  <label for="beverage11"><input type="checkbox" class = "ingredients-list" /><span>Cranberry Juice</span></label>
+                  <label for="beverage12"><input type="checkbox" class = "ingredients-list" /><span>Espresso</span></label>
+                  <label for="beverage13"><input type="checkbox" class = "ingredients-list" /><span>Fruit Juice</span></label>
+                  <label for="beverage14"><input type="checkbox" class = "ingredients-list" /><span>Ginger Ale</span></label>
+                  <label for="beverage15"><input type="checkbox" class = "ingredients-list" /><span>Club Soda</span></label>
+                  <label for="beverage16"><input type="checkbox" class = "ingredients-list" /><span>Sprite</span></label>
+                  <label for="beverage17"><input type="checkbox" class = "ingredients-list" /><span>Kool Aid</span></label>
+                  <label for="beverage18"><input type="checkbox" class = "ingredients-list" /><span>Grenadine</span></label>
+                  <label for="beverage19"><input type="checkbox" class = "ingredients-list" /><span>Margarita Mix</span></label>
+                  <label for="beverage20"><input type="checkbox" class = "ingredients-list" /><span>Cherry Juice</span></label>
+                  <label for="beverage1"><input type="checkbox" class = "ingredients-list" /><span>Pepsi</span></label>
+                  <label for="beverage1"><input type="checkbox" class = "ingredients-list" /><span>Mountain Dew</span></label>
+                </div>
+              </div>
+              <div class="col">
+                <div class = "categories">
+                  <img src="./images/desserts.jpg" alt="" />
+                  <label for="desserts"> Desserts & Snacks</label>
+                </div>
+                <button onclick="myFunction(this)" class="dropbtn">+</button>
+                <div class="dropdown-content">
+                  <label for="dessert1"><input type="checkbox" class = "ingredients-list" /><span>Chocolate</span></label>
+                  <label for="dessert2"><input type="checkbox" class = "ingredients-list" /><span>Apple Sauce</span></label>
+                  <label for="dessert3"><input type="checkbox" class = "ingredients-list" /><span>Strawberry Jam</span></label>
+                  <label for="dessert4"><input type="checkbox" class = "ingredients-list" /><span>Graham Cracker</span></label>
+                  <label for="dessert5"><input type="checkbox" class = "ingredients-list" /><span>Marshmallow</span></label>
+                  <label for="dessert6"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Syrup</span></label>
+                  <label for="dessert7"><input type="checkbox" class = "ingredients-list" /><span>Potato Chips</span></label>
+                  <label for="dessert8"><input type="checkbox" class = "ingredients-list" /><span>Nutella</span></label>
+                  <label for="dessert9"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Morsels</span></label>
+                  <label for="dessert10"><input type="checkbox" class = "ingredients-list" /><span>Bittersweet Chocolate</span></label>
+                  <label for="dessert11"><input type="checkbox" class = "ingredients-list" /><span>Pudding Mix</span></label>
+                  <label for="dessert12"><input type="checkbox" class = "ingredients-list" /><span>Raspberry Jam</span></label>
+                  <label for="dessert13"><input type="checkbox" class = "ingredients-list" /><span>Dark Chocolate</span></label>
+                  <label for="dessert14"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Chips</span></label>
+                  <label for="dessert15"><input type="checkbox" class = "ingredients-list" /><span>Jam</span></label>
+                  <label for="dessert16"><input type="checkbox" class = "ingredients-list" /><span>White Chocolate</span></label>
+                  <label for="dessert17"><input type="checkbox" class = "ingredients-list" /><span>Brownie Mix</span></label>
+                  <label for="dessert18"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Pudding</span></label>
+                  <label for="dessert19"><input type="checkbox" class = "ingredients-list" /><span>Jello</span></label>
+                  <label for="dessert20"><input type="checkbox" class = "ingredients-list" /><span>Caramel</span></label>
+                  <label for="dessert21"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Powder</span></label>
+                  <label for="dessert22"><input type="checkbox" class = "ingredients-list" /><span>Candy</span></label>
+                  <label for="dessert23"><input type="checkbox" class = "ingredients-list" /><span>Corn Chips</span></label>
+                  <label for="dessert24"><input type="checkbox" class = "ingredients-list" /><span>Cookies</span></label>
+                  <label for="dessert25"><input type="checkbox" class = "ingredients-list" /><span>Apricot Jam</span></label>
+                  <label for="dessert26"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Bar</span></label>
+                  <label for="dessert27"><input type="checkbox" class = "ingredients-list" /><span>Cookie Dough</span></label>
+                  <label for="dessert28"><input type="checkbox" class = "ingredients-list" /><span>Oreo</span></label>
+                  <label for="dessert29"><input type="checkbox" class = "ingredients-list" /><span>Doritos</span></label>
+                  <label for="dessert30"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Cookies</span></label>
+                  <label for="dessert31"><input type="checkbox" class = "ingredients-list" /><span>Butterscotch</span></label>
+                  <label for="dessert32"><input type="checkbox" class = "ingredients-list" /><span>Blueberry Jam</span></label>
+                  <label for="dessert33"><input type="checkbox" class = "ingredients-list" /><span>Cherry Jam</span></label>
+                  <label for="dessert34"><input type="checkbox" class = "ingredients-list" /><span>Fig Jam</span></label>
+                  <label for="dessert35"><input type="checkbox" class = "ingredients-list" /><span>Plum Jam</span></label>
+                  <label for="dessert36"><input type="checkbox" class = "ingredients-list" /><span>Cinnamon Roll</span></label>
+                  <label for="dessert37"><input type="checkbox" class = "ingredients-list" /><span>Fudge</span></label>
+                  <label for="dessert38"><input type="checkbox" class = "ingredients-list" /><span>Cookie Crumb</span></label>
+                  <label for="dessert39"><input type="checkbox" class = "ingredients-list" /><span>Grape Jelly</span></label>
+                  <label for="dessert40"><input type="checkbox" class = "ingredients-list" /><span>Chilli Jam</span></label>
+                  <label for="dessert41"><input type="checkbox" class = "ingredients-list" /><span>Lady Fingers</span></label>
+                  <label for="dessert42"><input type="checkbox" class = "ingredients-list" /><span>Black Pudding</span></label>
+                  <label for="dessert43"><input type="checkbox" class = "ingredients-list" /><span>Chocolate Wafer</span></label>
+                  <label for="dessert44"><input type="checkbox" class = "ingredients-list" /><span>Gummy Worms</span></label>
+                  <label for="dessert45"><input type="checkbox" class = "ingredients-list" /><span>Biscotti Biscuit</span></label>
+                  <label for="dessert46"><input type="checkbox" class = "ingredients-list" /><span>Doughnut</span></label>
+                  <label for="dessert47"><input type="checkbox" class = "ingredients-list" /><span>Apple Jelly</span></label>
+                  <label for="dessert48"><input type="checkbox" class = "ingredients-list" /><span>Red Pepper Jelly</span></label>
+                  <label for="dessert49"><input type="checkbox" class = "ingredients-list" /><span>Orange Jelly</span></label>
+                  <label for="dessert50"><input type="checkbox" class = "ingredients-list" /><span>Jalapeno Jelly</span></label>
+                  <label for="dessert51"><input type="checkbox" class = "ingredients-list" /><span>Mint Jelly</span></label>
+                  <label for="dessert52"><input type="checkbox" class = "ingredients-list" /><span>Currant Jelly</span></label>
+                  <label for="dessert53"><input type="checkbox" class = "ingredients-list" /><span>Lemon Jelly</span></label>
+                  <label for="dessert54"><input type="checkbox" class = "ingredients-list" /><span>Quince Jelly</span></label>
+                  <label for="dessert55"><input type="checkbox" class = "ingredients-list" /><span>Amaretti Cookies</span></label>
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+        <div id="results" class="tab-pane fade">
+          <h3>Results</h3>
+        </div>
+        <div id="cuisines" class="tab-pane fade">
+          <h3>Cuisines</h3>
+        </div>
+      </div>
     </div>
     <br />
-    
-    <div class="card" id = "logo">
-      <img src="./images/logo.png" class="card-img-top" alt="Chef Hat">
+
+    <div class="card" id="logo">
+      <img src="./images/logo.png" class="card-img-top" alt="Chef Hat" />
       <div class="card-body">
         <p class="card-text">Pantry Chef</p>
         <p class="card-text">Copyright© 2020</p>
       </div>
     </div>
-    
+
     <footer><a href="#">About Us</a> | <a href="#">Contact Us</a></footer>
-</body>
+  </body>
 </html>
