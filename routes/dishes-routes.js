@@ -20,6 +20,7 @@ module.exports = function(app) {
     res.render("instructions", dishes[0]);
   });
 
+<<<<<<< HEAD
   app.get("/api/recipe/:id", (req, res) => {
     db.Recipe.findAll({
       where: {
@@ -30,5 +31,9 @@ module.exports = function(app) {
     }).then(dbTodo => {
       res.json(dbTodo);
     });
+=======
+  app.get("/results", (req, res) => {
+    res.render("results", dishes[0]);
+>>>>>>> eafad8cde3bcad59b8cf9b85eec252a86c55f8e5
   });
 };
