@@ -10,12 +10,12 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render("signup");
+    res.render("ingredientList");
   });
 
-  app.get("/signup", (req,res)=>{
-    res.render("signup")
-  })
+  app.get("/signup", (req, res) => {
+    res.render("signup");
+  });
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
