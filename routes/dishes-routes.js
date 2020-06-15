@@ -15,4 +15,11 @@ module.exports = function(app) {
   app.get("/instructions", (req, res) => {
     res.render("instructions", dishes[0]);
   });
+
+  app.get("/results", (req, res) => {
+    res.render("results", dishes[0]);
+  });
+  app.get("/", (req, res) => {
+    res.render("ingredientList");
+  });
 };
