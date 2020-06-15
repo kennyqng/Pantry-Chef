@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-  background-color: #79C200;
+  background-color: yellowgreen;
 }
 
 .d-inline-block {
@@ -26,7 +26,7 @@ h5 {
 h1 {
   text-align: center;
   color: white;
-  font-family: 'Snell', 'Roundhand', 'Germania One', cursive;
+  font-family: 'Germania One', cursive;
   margin-top: 20px;
 }
 
@@ -49,15 +49,99 @@ form .form-row{
 .container {
   margin: auto;
   width: 60%;
+  height: auto;
   border: 0px solid black;
   padding: 10px;
 }
 
+.tab-content {
+  color: white;
+  background-color: currentColor;
+}
+
+h3 {
+  color: yellowgreen;
+}
+
+div#ingredients {
+  margin: 0 25px;
+}
+
+div#results {
+  margin: 0 25px;
+}
+
+div#cuisines {
+  margin: 0 25px;
+}
+
+.categories {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+  color: black;
+  display: inline-block;
+  width: 70%;
+}
+
+.categories>img {
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+}
+
+.dropbtn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: black;
+  border: none;
+  background: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  overflow: auto;
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: black;
+  padding: 5px 5px;
+  text-decoration: none;
+  width: 290px;
+}
+
+.show {
+  display: block;
+}
+
+.ingredients-list {
+  margin-left: 10px;
+}
+
+.checkboxes label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.checkboxes input {
+  vertical-align: middle;
+}
+
+.checkboxes label span {
+  vertical-align: middle;
+}
+
 #logo {
-  /* margin-top: 80px; */
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
+  margin-top: 80px;
   background-color: transparent;
   font-size: 1.2rem;
   color: white;
@@ -74,7 +158,7 @@ img.card-img-top {
 }
 
 footer {
-  background-color: #79C200;
+  background-color: yellowgreen;
   font-size: 1.8rem;
   color: white;
   text-align: center;
@@ -101,6 +185,18 @@ footer a:hover{
   div#logo {
       margin-top: 43%;
   }
+  .dropdown-content.show {
+      width: 150px;
+  }
+  .col {
+      flex-basis: 0;
+  }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1365px) {
+  .dropdown-content.show {
+      width: 210px;
+  }
 }
 
 /******* Mobile styling  *******/
@@ -110,5 +206,11 @@ footer a:hover{
   }
   div#logo {
       margin-top: 15%;
+  }
+  .col {
+      flex-basis: auto;
+  }
+  .dropdown-content.show {
+      width: 160px;
   }
 }

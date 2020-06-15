@@ -19,4 +19,7 @@ module.exports = function(app) {
   app.get("/results", (req, res) => {
     res.render("results", dishes[0]);
   });
+  app.get("/", (req, res) => {
+    res.render("ingredientList");
+  });
 };
