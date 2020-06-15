@@ -20,20 +20,15 @@ module.exports = function(app) {
     res.render("instructions", dishes[0]);
   });
 
-<<<<<<< HEAD
-  app.get("/api/recipe/:id", (req, res) => {
+  app.get("/api/recipe/:name", (req, res) => {
     db.Recipe.findAll({
       where: {
         name: {
-          [Op.ilike]: "%" + req.name + "%"
+          [Op.ilike]: "%" + req.params.name + "%"
         }
       }
-    }).then(dbTodo => {
-      res.json(dbTodo);
+    }).then(dbRecipe => {
+      res.json(dbRecipe);
     });
-=======
-  app.get("/results", (req, res) => {
-    res.render("results", dishes[0]);
->>>>>>> eafad8cde3bcad59b8cf9b85eec252a86c55f8e5
   });
 };
