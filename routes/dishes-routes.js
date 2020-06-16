@@ -1,3 +1,7 @@
+const db = require("../models");
+const { Sequelize } = require("../models");
+const Op = Sequelize.Op;
+
 module.exports = function(app) {
   const dishes = [
     {
@@ -12,11 +16,19 @@ module.exports = function(app) {
     }
   ];
 
-  app.get("/instructions", (req, res) => {
+  app.get("/api/instructions", (req, res) => {
     res.render("instructions", dishes[0]);
   });
 
-  app.get("/results", (req, res) => {
-    res.render("results", dishes[0]);
+  app.get("/api/recipe/:name", (req, res) => {
+    db.Recipe.findAll({
+      where: {
+        name: {
+          [Op.ilike]: "%" + req.params.name + "%"
+        }
+      }
+    }).then(dbRecipe => {
+      res.json(dbRecipe);
+    });
   });
 };

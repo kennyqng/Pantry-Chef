@@ -1,0 +1,212 @@
+body {
+    background-image: url("./images/cuttingBoard.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+}
+
+.navbar {
+    background-color: yellowgreen;
+}
+
+.d-inline-block {
+    height: 40px;
+    width: 50px;
+}
+
+h5 {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Germania One', cursive;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+form .form-row{
+    margin: 0 34%;
+}
+
+#arrow {
+    font-size: 60px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.container {
+    margin: auto;
+    width: 60%;
+    height: auto;
+    border: 0px solid black;
+    padding: 10px;
+}
+
+.tab-content {
+    color: white;
+    background-color: currentColor;
+}
+
+h3 {
+    color: yellowgreen;
+}
+
+div#ingredients {
+    margin: 0 25px;
+}
+
+div#results {
+    margin: 0 25px;
+}
+
+div#cuisines {
+    margin: 0 25px;
+}
+
+.categories {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    color: black;
+    display: inline-block;
+    width: 70%;
+}
+
+.categories>img {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.dropbtn {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: black;
+    border: none;
+    background: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    overflow: auto;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    width: 290px;
+}
+
+.show {
+    display: block;
+}
+
+.ingredients-list {
+    margin-left: 10px;
+}
+
+.checkboxes label {
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.checkboxes input {
+    vertical-align: middle;
+}
+
+.checkboxes label span {
+    vertical-align: middle;
+}
+
+#logo {
+    margin-top: 80px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+}
+
+img.card-img-top {
+    width: 80px;
+    margin: 0 auto;
+}
+
+#logo p {
+    text-align: center;
+}
+
+footer {
+    background-color: yellowgreen;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #fff;
+}
+
+/******* iPad styling  *******/
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    form .form-row {
+        margin: 0 31%;
+    }
+    div#logo {
+        margin-top: 43%;
+    }
+    .dropdown-content.show {
+        width: 150px;
+    }
+    .col {
+        flex-basis: 0;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1365px) {
+    .dropdown-content.show {
+        width: 210px;
+    }
+}
+
+/******* Mobile styling  *******/
+@media only screen and (max-width:767px) {
+    form .form-row {
+        margin: 0 10%;
+    }
+    div#logo {
+        margin-top: 15%;
+    }
+    .col {
+        flex-basis: auto;
+    }
+    .dropdown-content.show {
+        width: 160px;
+    }
+}

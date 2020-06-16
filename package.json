@@ -1,5 +1,5 @@
 {
-  "name": "1-Passport-Example",
+  "name": "pantry-chef",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,9 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "seed": "cd db && node seed.js",
+    "heroku-postbuild": "npm run seed"
   },
   "keywords": [],
   "author": "",

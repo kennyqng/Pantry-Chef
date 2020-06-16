@@ -5,16 +5,21 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       primaryKey: true
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
-      allowNull: false
+      default: "Chicken Parm"
     },
     ingredients: {
       type: DataTypes.TEXT,
-      allowNull: false
+      default: "Chicken"
     },
     instructions: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      default: "['cook chicken']"
+    },
+    picture_link: {
+      type: DataTypes.STRING,
+      default: "www.google.com"
     }
   });
   return Recipe;
