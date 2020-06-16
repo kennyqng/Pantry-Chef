@@ -1,0 +1,36 @@
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <input type="text" style="margin-top:20px;" class="form-control mb-2" id="inlineFormInput"
+                placeholder="Search for a dish">
+        </div>
+        <div class="col-auto">
+            <button id="arrow">&#8594;</button>
+        </div>
+    </div>
+</form>
+<br />
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs nav-justified card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Ingredients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cuisines</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p>Dish: {{dishName}}</p>
+            <p>Dish: {{ingredients}}</p>
+            <p>Instructions: {{instructions}}</p>
+        </div>
+    </div>
+</div>
+<br />
