@@ -17,6 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       default: "['cook chicken']"
     },
+    // eslint-disable-next-line camelcase
     picture_link: {
       type: DataTypes.STRING,
       default: "www.google.com"
