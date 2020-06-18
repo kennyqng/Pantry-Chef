@@ -30,8 +30,8 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/dishes-routes.js")(app);
 
-//nope
-db.sequelize.sync({force:false}).then(() => {
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
