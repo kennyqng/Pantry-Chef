@@ -1,7 +1,28 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 30px;
 }
+
+.col-md-6.col-md-offset-3 {
+  background-color: whitesmoke;
+  color: black;
+  padding: 20px;
+  margin: auto;
+}
+
+button.btn.btn-default {
+  border: 2px solid yellowgreen;
+}
+
+button.btn.btn-default:hover {
+  background-color: yellowgreen;
+  color: white;
+}
+
+h2 {
+  color: yellowgreen;
+}
+
 body {
   background-image: url("/images/cuttingBoard.jpg");
   background-repeat: no-repeat;
@@ -59,8 +80,31 @@ form .form-row{
   background-color: currentColor;
 }
 
+.row.justify-content-center {
+  padding-top: 10px;
+}
+
 h3 {
   color: yellowgreen;
+}
+
+.search-button {
+  border: none;
+  background-color: white; 
+  color: black; 
+  border: 2px solid yellowgreen;
+  padding: 8px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: yellowgreen;
+  color: white;
 }
 
 div#ingredients {
@@ -106,7 +150,6 @@ div#cuisines {
 
 .dropdown-content {
   display: none;
-  position: relative;
   background-color: #f1f1f1;
   min-width: 120px;
   overflow: auto;
@@ -116,6 +159,7 @@ div#cuisines {
   padding: 5px 5px;
   text-decoration: none;
   width: 290px;
+  margin-bottom: 15px;
 }
 
 .show {
@@ -124,6 +168,10 @@ div#cuisines {
 
 .ingredients-list {
   margin-left: 10px;
+}
+
+span {
+  margin: 5px;
 }
 
 .checkboxes label {
@@ -146,6 +194,7 @@ div#cuisines {
   font-size: 1.2rem;
   color: white;
   border: none;
+  margin-bottom: 55px;
 }
 
 img.card-img-top {
@@ -183,34 +232,76 @@ footer a:hover{
       margin: 0 31%;
   }
   div#logo {
-      margin-top: 43%;
+      margin-top:  20%;
   }
   .dropdown-content.show {
-      width: 150px;
+      width: 210px;
   }
   .col {
       flex-basis: 0;
+  }
+  .container {
+    width: 638px;
+  }
+  .form-row.align-items-center {
+    margin-top: -30px;
+  }
+  button.button.search-button {
+    font-size: 22px;
+    padding: 5px 25px;
   }
 }
 
 @media only screen and (min-width:1024px) and (max-width:1365px) {
   .dropdown-content.show {
-      width: 210px;
+      width: 270px;
+  }
+  .container {
+    width: 80%;
+  }
+  .col-4 {
+    margin-left: 60px;
+  }
+  button.button.search-button {
+    font-size: 25px;
+    padding: 5px 25px;
   }
 }
 
 /******* Mobile styling  *******/
 @media only screen and (max-width:767px) {
   form .form-row {
-      margin: 0 10%;
+    margin: 0 10%;
+    margin-top: -45px;
   }
   div#logo {
-      margin-top: 15%;
+    margin-top: 15%;
   }
   .col {
-      flex-basis: auto;
+    flex-basis: auto;
   }
   .dropdown-content.show {
-      width: 160px;
+    width: 257px;
+  }
+  .container {
+    margin-top: -50px;
+    width: 332px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  button.dropbtn {
+    float: right;
+  }
+  .col-4 {
+    margin-left: 35px;
+    margin-right: 10px;
+  }
+  button.button.search-button {
+    padding: 4px 12px;
   }
 }
