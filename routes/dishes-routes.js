@@ -21,6 +21,7 @@ module.exports = function(app) {
 
   app.get("/api/recipe/:name", (req, res) => {
     db.Recipe.findAll({
+      limit: 5,
       where: {
         title: sequelize.where(
           sequelize.fn("LOWER", sequelize.col("title")),
@@ -29,7 +30,12 @@ module.exports = function(app) {
         )
       }
     }).then(dbRecipe => {
-      res.json(dbRecipe);
+      const data = [];
+      dbRecipe.forEach(element => {
+        data.push(element.dataValues);
+      });
+      console.log(data);
+      res.render("results", { data });
     });
   });
 };
