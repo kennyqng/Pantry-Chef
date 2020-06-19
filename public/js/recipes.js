@@ -13,5 +13,4 @@ $(document).ready(() => {
       delete searchKeys[event.target.id];
       console.log(searchKeys);
     }
-  });
 });
