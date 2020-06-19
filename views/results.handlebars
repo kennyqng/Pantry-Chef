@@ -1,12 +1,50 @@
-<div>
-    <ul>
-        {{#each result}}
-        <li>
-            <p>{{this.id}} {{this.result}}</p>
-        </li>
-        {{/each results}}
-    </ul>
-</div>
-</div>
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <input type="text" style="margin-top:20px;" class="form-control mb-2" id="inlineFormInput"
+                placeholder="Search for a dish">
+        </div>
+        <div class="col-auto">
+            <button id="arrow">&#8594;</button>
+        </div>
+    </div>
+</form>
+<br />
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs nav-justified card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#/api/ instructions">Ingredients</a>
+                </li>
+                <div>
+                    <ul>
+                        {{#each data}}
+                        <li>
+                            <p>{{id}} <a href="#">{{title}}</a></p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/api/results">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cuisines</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                {{#each dbRecipe}}
+                <li>
+                    <p>{{id}} {{title}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br />
+    </div>
 </div>
 <br />
