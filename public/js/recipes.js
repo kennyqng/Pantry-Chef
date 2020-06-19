@@ -1,4 +1,6 @@
 $(document).ready(() => {
+  const searchKeys = {};
+
   $("#arrow").on("click", event => {
     event.preventDefault();
     const searchInput = $("#inlineFormInput");
@@ -6,6 +8,12 @@ $(document).ready(() => {
   });
 
   $(".ingredients-list").on("click", event => {
-    console.log(event.target.id);
+    if ($(event.target).is(":checked")) {
+      searchKeys[event.target.id] = event.target.id;
+      console.log(searchKeys);
+    } else {
+      delete searchKeys[event.target.id];
+      console.log(searchKeys);
+    }
   });
 });
