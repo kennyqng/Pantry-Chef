@@ -1,5 +1,6 @@
 const db = require("../models");
 const { sequelize } = require("../models");
+const { Op } = require("sequelize");
 
 module.exports = function(app) {
   const dishes = [
@@ -15,12 +16,25 @@ module.exports = function(app) {
     }
   ];
 
-  app.get("/api/instructions", (req, res) => {
-    res.render("instructions", dishes[0]);
+  app.get("/api/:dish", (req, res) => {
+    db.Recipe.findAll({
+      limit: 1,
+      where: {
+        title: req.params.dish
+      }
+    }).then(dbRecipe => {
+      const data = [];
+      dbRecipe.forEach(element => {
+        data.push(element.dataValues);
+      });
+      console.log(data);
+      res.render("instructions", { data });
+    });
   });
 
-  app.get("/api/recipe/:name", (req, res) => {
+  app.get("/:name", (req, res) => {
     db.Recipe.findAll({
+      limit: 5,
       where: {
         title: sequelize.where(
           sequelize.fn("LOWER", sequelize.col("title")),
@@ -29,7 +43,36 @@ module.exports = function(app) {
         )
       }
     }).then(dbRecipe => {
-      res.json(dbRecipe);
+      const data = [];
+      dbRecipe.forEach(element => {
+        data.push(element.dataValues);
+      });
+      console.log(data);
+      res.render("results", { data });
+    });
+  });
+
+  app.post("/search/ingredients/:ingredients", (req, res) => {
+    console.log(req.params);
+    const queryArr = req.body.ingredients.map(a => ({
+      [Op.like]: `%${a}%`
+    }));
+    console.log(queryArr);
+    db.Recipe.findAll({
+      limit: 5,
+      where: {
+        ingredients: {
+          [Op.and]: queryArr
+        }
+      }
+    }).then(dbRecipe => {
+      // const data = [];
+      // dbRecipe.forEach(element => {
+      //   data.push(element.dataValues);
+      // });
+      console.log(dbRecipe);
+      // console.log(data);
+      // res.render("results", { data });
     });
   });
 };

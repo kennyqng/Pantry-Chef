@@ -1,12 +1,28 @@
-<div>
-    <ul>
-        {{#each result}}
-        <li>
-            <p>{{this.id}} {{this.result}}</p>
-        </li>
-        {{/each results}}
-    </ul>
-</div>
-</div>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs nav-justified card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#/api/ instructions">Ingredients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#/api/results">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cuisines</a>
+                </li>
+            </ul>
+        </div>
+            <div>
+                <ul>
+                    {{#each data}}
+                    <li>
+                        <p>{{id}} <a href="#">{{title}}</a></p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        <br />
+    </div>
 </div>
 <br />
