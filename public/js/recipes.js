@@ -4,8 +4,9 @@ $(document).ready(() => {
 
   $("#arrow").on("click", event => {
     event.preventDefault();
-    searchInput = $("#inlineFormInput");
+    searchInput = $("#inlineFormInput").val();
     console.log("Searching " + searchInput);
+    window.location.replace("/api/recipe/" + searchInput);
   });
 
   $(".ingredients-list").on("click", event => {
