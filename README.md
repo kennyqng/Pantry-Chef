@@ -1,22 +1,70 @@
-# project2
+![badmath](https://img.shields.io/badge/MIT-License-blue)
+# PANTRY CHEF
 
-Project Title
-PANTRY CHEF
-
-Project description:
+## About
 Web app designed to help you find recipes based on ingredients currently have at home.
 
-User story:
+<br/>
+
+## Click **[here](https://pantry-chef-kenny.herokuapp.com/)** to visit the website!
+
+<br/>
+
+
+## Table of Content
+* [User Story](#user-story)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+<br/>
+
+
+## User Story
 As a user, I want to look up recipes to cook with ingredients that are immediately available to me at home so that I can limit going to the groceries store and risk being exposed to Coronavirus.
 
-Wireframe or sketch of design:
-https://www.figma.com/file/b990eYLlFauVfsePQ0jfKT/Cooking-App?node-id=0%3A1
+<br/>
 
-Data base:
-Scraping
 
-Rough breakdown of tasks:
-1. create database
-2. building the UI of the website
-3. Query database
-4. Serving the html (handlebars)
+## Usage
+
+Search:<br/>
+![](assets/search.gif)<br/>
+<br/>
+
+<br/>
+
+
+## Credits
+`GitHub` | Name<br/>
+
+`kennyqng` | Kenny Nguyen<br/>
+`laurengarelick` | Lauren Garelick<br/>
+`rogelis` | Rogelio Salgado<br/>
+`domenikos5` | Dominador de la Cruz<br/>
+
+<br/>
+
+## License
+
+MIT License
+
+Copyright (c) [2020] [Kenny Nguyen, Lauren Garelick, Rogelio Salgado, Dominador de la Cruz]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
