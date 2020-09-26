@@ -35,12 +35,12 @@ Search:<br/>
 <br/>
 
 
-## Credits
+## Credits![badmath](https://img.shields.io/badge/MIT-License-blue)
 `GitHub` | Name<br/>
 
 `kennyqng` | Kenny Nguyen<br/>
-`laurengarelick` | Lauren Garelick<br/>
-`rogelis` | Rogelio Salgado<br/>
+`EvanDobalian` | Evan Dobalian<br/>
+`schaudhary4657` | Sapana Chaudhary<br/>
 `domenikos5` | Dominador de la Cruz<br/>
 
 <br/>
