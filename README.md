@@ -6,7 +6,7 @@ Web app designed to help you find recipes based on ingredients currently have at
 
 <br/>
 
-## Click **[here](https://pantry-chef-kenny.herokuapp.com/)** to visit the website!
+## Click **[here](https://pantry-chef-kenny.herokuapp.com/)** to visit the Pantry Chef website!
 
 <br/>
 
