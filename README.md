@@ -35,7 +35,7 @@ Search:<br/>
 <br/>
 
 
-## Credits![badmath](https://img.shields.io/badge/MIT-License-blue)
+## Credits
 `GitHub` | Name<br/>
 
 `kennyqng` | Kenny Nguyen<br/>
