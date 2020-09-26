@@ -49,7 +49,7 @@ Search:<br/>
 
 MIT License
 
-Copyright (c) [2020] [Kenny Nguyen, Lauren Garelick, Rogelio Salgado, Dominador de la Cruz]
+Copyright (c) [2020] [Kenny Nguyen, Evan Dobalian, Sapana Chaudhary, Dominador de la Cruz]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
