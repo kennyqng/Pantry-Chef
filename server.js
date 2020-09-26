@@ -10,6 +10,9 @@ const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
+// adding compression
+const compression = require("compression");
+
 //kenny was here!
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -21,9 +24,12 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
+  );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// compress all responses
+app.use(compression());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
