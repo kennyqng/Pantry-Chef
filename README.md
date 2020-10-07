@@ -21,7 +21,7 @@ Web app designed to help you find recipes based on ingredients currently have at
 
 
 ## User Story
-As a user, I want to look up recipes to cook with ingredients that are immediately available to me at home so that I can limit going to the groceries store and risk being exposed to Coronavirus.
+As a user, I want to look up recipes for ingredients that are immediately available to me at home so that I can limit going to the groceries store and risk being exposed to Coronavirus.
 
 <br/>
 
