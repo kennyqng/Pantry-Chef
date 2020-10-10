@@ -22,6 +22,12 @@ $(document).ready(() => {
     }
   });
   $("#goButton").on("click", () => {
-    $.get(`/search/ingredients/?ingre=${JSON.stringify(selectedIngredients)}`);
+    // console.log(JSON.stringify(selectedIngredients));
+    // $.get(`/search/ingredients/?ingre=${JSON.stringify(selectedIngredients)}`).then((result)=>{
+      
+    //   console.log(result);
+    // });
+    window.location.replace("/search/ingredients/?ingre=" + JSON.stringify(selectedIngredients));
+
   });
 });
