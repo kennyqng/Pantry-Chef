@@ -54,10 +54,6 @@ module.exports = function(app) {
         }
       }
     }).then(dbRecipe => {
-      // const data = [];
-      // dbRecipe.forEach(element => {
-      //   data.push(element.dataValues);
-      // });
       console.log(dbRecipe.map(a => a.dataValues));
       res.render("results", { data: dbRecipe.map(a => a.dataValues) });
       console.log(dbRecipe);
