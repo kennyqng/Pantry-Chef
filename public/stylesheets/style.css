@@ -68,8 +68,9 @@ form .form-row{
 }
 
 .container {
+  background-color: white;
   margin: auto;
-  width: 60%;
+  width: 80%;
   height: auto;
   border: 0px solid black;
   padding: 10px;
@@ -226,6 +227,14 @@ footer a:hover{
   color: #fff;
 }
 
+/* ********* Instructions Tab *********** */
+.details {
+  color: rgb(60, 60, 60);
+}
+.space {
+  margin: 15px;
+}
+
 /******* iPad styling  *******/
 @media only screen and (min-width:768px) and (max-width:1023px) {
   form .form-row {
@@ -285,7 +294,7 @@ footer a:hover{
   }
   .container {
     margin-top: -50px;
-    width: 332px;
+    width: 360px;
   }
   h1 {
     font-size: 1.5rem;
@@ -303,5 +312,8 @@ footer a:hover{
   }
   button.button.search-button {
     padding: 4px 12px;
+  }
+  .space {
+    margin: 5px;
   }
 }

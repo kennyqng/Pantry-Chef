@@ -22,12 +22,8 @@ $(document).ready(() => {
     }
   });
   $("#goButton").on("click", () => {
-    // console.log(JSON.stringify(selectedIngredients));
-    // $.get(`/search/ingredients/?ingre=${JSON.stringify(selectedIngredients)}`).then((result)=>{
-      
-    //   console.log(result);
-    // });
-    window.location.replace("/search/ingredients/?ingre=" + JSON.stringify(selectedIngredients));
-
+    window.location.replace(
+      "/search/ingredients/?ingredients=" + JSON.stringify(selectedIngredients)
+    );
   });
 });
