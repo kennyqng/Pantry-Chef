@@ -1,26 +1,28 @@
 <div class="container">
-    <div class="card text-center">
+    <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs nav-justified card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ingredients</a>
+                    <a class="nav-link" href="/">Ingredients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Results</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cuisines</a>
+                    <a class="nav-link active">Instructions</a>
                 </li>
             </ul>
         </div>
         <div>
-            <ul>
+            <div class="space">
+                <br>
                 {{#each data}}
-                    <p>Dish: {{title}}</p>
-                    <p>ingredients: {{ingredients}}</p>
-                    <p>Instructions: {{instructions}}</p>
+                <h2>{{title}}</h2>
+                <br>
+                <h4 class="details">Ingredients</h4>
+                <p>{{removeBracket ingredients}}</p>
+                <br>
+                <h4 class="details">Instructions</h4>
+                <p>{{instructions}}</p>
                 {{/each}}
-            </ul>     
+            </div>
         </div>
     </div>
 </div>

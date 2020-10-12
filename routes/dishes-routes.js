@@ -3,23 +3,6 @@ const { sequelize } = require("../models");
 const { Op } = require("sequelize");
 
 module.exports = function(app) {
-  const dishes = [
-    {
-      dishName: "Cheeseburger",
-      ingredients: ["ground meat", "buns"],
-      instructions: "grill meat, throw it on some buns. yum."
-    },
-    {
-      dishName: "hotdog",
-      ingredients: ["dogs", "buns"],
-      instructions: "grill dog, throw it on some buns. also yum."
-    }
-  ];
-
-  app.get("/api/instructions", (req, res) => {
-    res.render("instructions", dishes[0]);
-  });
-
   app.get("/api/recipe/:name", (req, res) => {
     db.Recipe.findAll({
       limit: 15,
@@ -41,7 +24,7 @@ module.exports = function(app) {
   });
   app.get("/search/ingredients", (req, res) => {
     console.log(req.query);
-    const query = JSON.parse(req.query.ingre);
+    const query = JSON.parse(req.query.ingredients);
     const queryArr = query.map(a => ({
       [Op.like]: `%${a.toLowerCase()}%`
     }));
@@ -61,7 +44,7 @@ module.exports = function(app) {
   });
   app.get("/api/:dish", (req, res) => {
     db.Recipe.findAll({
-      limit: 15,
+      limit: 1,
       where: {
         title: req.params.dish
       }

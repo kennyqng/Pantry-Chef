@@ -3,25 +3,25 @@
         <div class="card-header">
             <ul class="nav nav-tabs nav-justified card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="#/api/ instructions">Ingredients</a>
+                    <a class="nav-link" href="/">Ingredients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#/api/results">Results</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cuisines</a>
+                    <a class="nav-link active">Results</a>
                 </li>
             </ul>
         </div>
-            <div>
-                <ul>
-                    {{#each data}}
-                    <div>
-                        <p><a href="#">{{title}}</a></p>
-                    </div>
-                    {{/each}}
-                </ul>
-            </div>
+        <div>
+            <br><br>
+            <h2 class="details">Dishes</h2>
+            <br>
+            <ul>
+                {{#each data}}
+                <div>
+                    <p><a href='/api/{{title}}'>{{title}}</a></p>
+                </div>
+                {{/each}}
+            </ul>
+        </div>
         <br />
     </div>
 </div>
